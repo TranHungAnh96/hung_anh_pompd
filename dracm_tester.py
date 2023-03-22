@@ -84,8 +84,8 @@ class Tester(object):
         logger.dumpkvs()
 
 if __name__ == "__main__":
-    from environment.batch_migration_env import EnvironmentParameters
-    from environment.batch_migration_env import BatchMigrationEnv
+    from environment.batch_migration_env_11 import EnvironmentParameters
+    from environment.batch_migration_env_11 import BatchMigrationEnv
     from policies.rnn_q_network import RNNQNetwork
     from policies.rnn_policy_with_action_input import RNNPolicyWithValue
 

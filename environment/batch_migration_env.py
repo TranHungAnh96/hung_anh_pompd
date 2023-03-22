@@ -332,13 +332,20 @@ class BatchMigrationEnv(gym.Env):
             
             if action != None:  ##added              
                 # print(f"action: {action}")                  
-                if idx == action:
+                if idx == action and action == self._state[trace_id][1] and user_position_index == self._state[trace_id][1]: ##added
+                    communication_migration_cost_1 = self._state[trace_id][2+self._num_base_station + action]
+                    computation_cost_1 = self._state[trace_id][2+action] 
+                                    
                     result_cost = float(self._state[trace_id][132]*0.2) / float(trans_rate) +\
                         (self._state[trace_id][132]*0.2 / self._optical_fiber_trans_rate)*num_of_hops ##added
-                    precopy_delay = self._state[trace_id][197]*num_of_hops  ##added
-                    # print(f"result_cost: {result_cost}")
-                    # print(f"precopy_delay: {precopy_delay}")
-                    self.reward = self.reward - precopy_delay - result_cost ##added
+                    precopy_delay = 0 #self._state[trace_id][197]*num_of_hops  ##added
+                else:
+                    communication_migration_cost_1 = float(self._state[trace_id][132]) / float(trans_rate) + self._state[trace_id][132]/50 + 0.1
+                    computation_cost_1 = self._state[trace_id][2+action] 
+                    
+                    result_cost = float(self._state[trace_id][132]*0.2) / float(trans_rate) + (self._state[trace_id][132]*0.2)/50 + 0.1 
+                    precopy_delay = self._state[trace_id][197]*10     
+                self.reward = - communication_migration_cost_1 - computation_cost_1 - precopy_delay - result_cost ##added
                 
             
 

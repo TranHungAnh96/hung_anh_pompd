@@ -67,8 +67,8 @@ def always_migration_solution(env, system_infos):
     return always_migration_rewards
 
 if __name__ == "__main__":
-    from environment.batch_migration_env import BatchMigrationEnv
-    from environment.batch_migration_env import EnvironmentParameters
+    from environment.batch_migration_env_11 import BatchMigrationEnv
+    from environment.batch_migration_env_11 import EnvironmentParameters
     from sampler.migration_sampler import EvaluationSampler
     from sampler.migration_sampler import MigrationSampler
     from sampler.migration_sampler import MigrationSamplerProcess

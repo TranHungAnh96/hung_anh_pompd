@@ -1,6 +1,6 @@
-from environment.batch_migration_env import EnvironmentParameters
+from environment.batch_migration_env_11 import EnvironmentParameters
 from environment.migration_env import MigrationEnv
-from environment.batch_migration_env import BatchMigrationEnv
+from environment.batch_migration_env_11 import BatchMigrationEnv
 
 from policies.q_network import QNetwork
 from sampler.replay_buffer import SequentialReplayBuffer

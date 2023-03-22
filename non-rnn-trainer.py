@@ -7,7 +7,7 @@ from policies.always_migrate_policy import AlwaysMigratePolicy
 from dracm_trainer import Trainer
 from environment.migration_env import EnvironmentParameters
 from environment.migration_env import MigrationEnv
-from environment.batch_migration_env import BatchMigrationEnv
+from environment.batch_migration_env_11 import BatchMigrationEnv
 from baselines.critic_network_baseline import CriticNetworkBaseline
 from baselines.linear_baseline import LinearTimeBaseline
 from baselines.rnn_critic_network_baseline import RNNCriticNetworkBaseline

@@ -333,18 +333,12 @@ class BatchMigrationEnv(gym.Env):
             if action != None:  ##added              
                 # print(f"action: {action}")                  
                 if idx == action:
-                    if idx == self._state[trace_id][1]: ##added
-                        if user_position_index == self._state[trace_id][1]: ##added
-                            result_cost = float(self._state[trace_id][132]*0.2) / float(trans_rate) +\
-                                (self._state[trace_id][132]*0.2 / self._optical_fiber_trans_rate)*num_of_hops ##added
-                            precopy_delay = self._state[trace_id][197]*num_of_hops  ##added
-                            # print(f"result_cost: {result_cost}")
-                            # print(f"precopy_delay: {precopy_delay}")
-                        else:
-                            result_cost = 3000
-                            precopy_delay = 2210
-                        
-                        self.reward = self.reward - precopy_delay - result_cost ##added
+                    result_cost = float(self._state[trace_id][132]*0.2) / float(trans_rate) +\
+                        (self._state[trace_id][132]*0.2 / self._optical_fiber_trans_rate)*num_of_hops ##added
+                    precopy_delay = self._state[trace_id][197]*num_of_hops  ##added
+                    # print(f"result_cost: {result_cost}")
+                    # print(f"precopy_delay: {precopy_delay}")
+                    self.reward = self.reward - precopy_delay - result_cost ##added
                 
             
 

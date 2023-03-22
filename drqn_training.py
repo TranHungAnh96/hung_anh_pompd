@@ -1,6 +1,6 @@
 from environment.migration_env import EnvironmentParameters
 from environment.migration_env import MigrationEnv
-from environment.batch_migration_env import BatchMigrationEnv
+from environment.batch_migration_env_11 import BatchMigrationEnv
 from policies.rnn_q_network import RNNQNetwork
 from sampler.replay_buffer import SequentialReplayBuffer
 from sampler.migration_sampler import MigrationSamplerForDRQN

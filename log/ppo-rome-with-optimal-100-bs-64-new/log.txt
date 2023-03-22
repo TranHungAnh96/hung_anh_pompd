@@ -2,46 +2,5 @@ Logging to ./log/ppo-rome-with-optimal-100-bs-64-new
 
  ---------------- Iteration 0 ----------------
 Sampling trajectories from environment ...
-Sampling spend time: 295.6441967487335s
+Sampling spend time: 324.8252100944519s
 Processing trajectories ...
-Processing spend time: 607.1741962432861s
-Baselien algorithms: 19.30817484855652s
-Updating policies ....
-Update spend time: 76.21072959899902s
--------------------------------------------
-| Itr                     | 0             |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.45e+03     |
-| average reward:         | -2116.41      |
-| batch size              | 160           |
-| entropy loss:           | 119.25        |
-| optimal migrate rewa... | -0            |
-| policy loss:            | 1.27          |
-| value loss:             | 15.01         |
--------------------------------------------
-save model weights ... 
-
- ---------------- Iteration 1 ----------------
-Sampling trajectories from environment ...
-Sampling spend time: 292.4859812259674s
-Processing trajectories ...
-Processing spend time: 603.4310767650604s
-Baselien algorithms: 19.089657306671143s
-Updating policies ....
-Update spend time: 72.08455610275269s
--------------------------------------------
-| Itr                     | 1             |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.45e+03     |
-| average reward:         | -2051.04      |
-| batch size              | 160           |
-| entropy loss:           | 119.04        |
-| optimal migrate rewa... | -0            |
-| policy loss:            | -0.52         |
-| value loss:             | 15.0          |
--------------------------------------------
-
- ---------------- Iteration 2 ----------------
-Sampling trajectories from environment ...

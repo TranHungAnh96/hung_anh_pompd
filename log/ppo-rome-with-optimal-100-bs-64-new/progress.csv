@@ -1,3 +1,0 @@
-Itr,value loss: ,batch size,average always migrate reward: ,policy loss: ,average reward: ,average never migrate rewards: ,entropy loss: ,average random reward: ,optimal migrate reward: 
-0,15.01,160,-1572.41,1.27,-2116.41,-1477.54,119.25,-2445.71,-0.0
-1,15.0,160,-1572.6,-0.52,-2051.04,-1478.41,119.04,-2445.65,-0.0

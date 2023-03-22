@@ -534,8 +534,8 @@ class EvaluationSamplerForDRQN(Sampler):
 if __name__ == "__main__":
     from environment.migration_env import EnvironmentParameters
     from environment.migration_env import MigrationEnv
-    from environment.batch_migration_env import EnvironmentParameters
-    from environment.batch_migration_env import BatchMigrationEnv
+    from environment.batch_migration_env_11 import EnvironmentParameters
+    from environment.batch_migration_env_11 import BatchMigrationEnv
     from baselines.linear_baseline import LinearFeatureBaseline
     from policies.fc_categorical_policy import FCCategoricalPolicy
     from policies.rnn_policy_with_action_input import RNNPolicyWithValue

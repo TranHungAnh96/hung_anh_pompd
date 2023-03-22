@@ -368,7 +368,7 @@ def worker(remote, parent_remote, env_pickle, n_envs, max_path_length, seed):
 if __name__ == "__main__":
     from environment.migration_env import EnvironmentParameters
     from environment.migration_env import MigrationEnv
-    from environment.batch_migration_env import BatchMigrationEnv
+    from environment.batch_migration_env_11 import BatchMigrationEnv
     import numpy as np
 
     env_default_parameters = EnvironmentParameters(num_traces=10,

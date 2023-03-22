@@ -119,8 +119,8 @@ def optimal_solution_for_batch_system_infos(env, system_infos):
 
 if __name__ == "__main__":
     from environment.migration_env import MigrationEnv
-    from environment.batch_migration_env import BatchMigrationEnv
-    from environment.batch_migration_env import EnvironmentParameters
+    from environment.batch_migration_env_11 import BatchMigrationEnv
+    from environment.batch_migration_env_11 import EnvironmentParameters
     from sampler.migration_sampler import EvaluationSampler
     from sampler.migration_sampler import MigrationSamplerProcess
     from baselines.linear_baseline import LinearFeatureBaseline

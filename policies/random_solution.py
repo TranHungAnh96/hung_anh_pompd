@@ -65,7 +65,7 @@ def random_solution(env, system_infos):
 
 if __name__ == "__main__":
     from environment.migration_env import MigrationEnv
-    from environment.batch_migration_env import BatchMigrationEnv
+    from environment.batch_migration_env_11 import BatchMigrationEnv
     from environment.migration_env import EnvironmentParameters
     from sampler.migration_sampler import MigrationSampler
     from sampler.migration_sampler import MigrationSamplerProcess
