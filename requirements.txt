@@ -1,0 +1,7 @@
+gym
+numba==0.55.1
+tensorflow-probability==0.15.0
+tensorflow-gpu==2.8.0
+networkx==2.6.3
+scipy==1.8.0
+pyprind==2.11.3
