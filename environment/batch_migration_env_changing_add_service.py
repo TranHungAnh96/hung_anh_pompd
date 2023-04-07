@@ -11,6 +11,27 @@ from numba import jit
 
 "The initial state of Migration Environment including the initial position. distances between services and positions"
 
+###########################Initial service list for 64 server#################################
+# matrix = np.zeros((64, 15))
+# for i in range(64):
+#     # Randomly select 5 indices to set to 1
+#     ones_indices = np.random.choice(15, 5, replace=False)
+#     matrix[i, ones_indices] = 1
+
+num_rows = 64
+num_cols = 15
+
+# Initialize an empty matrix
+matrix = [[0] * num_cols for _ in range(num_rows)]
+
+# Fill each row with 5 ones in random positions
+for row in matrix:
+    ones_indices = random.sample(range(num_cols), random.randint(10,15))
+    for index in ones_indices:
+        row[index] = 1
+    
+###############################################################################################
+
 Point = namedtuple('Point', ['x', 'y'])
 EnvironmentParameters = namedtuple('ServersParameter', ['trace_start_index', 'num_traces','num_base_station', 'optical_fiber_trans_rate',
                                                         'migration_coefficient_low', 'migration_coefficient_high', 'backhaul_coefficient',
@@ -27,7 +48,7 @@ class MECServer(object):
                  ratio_lower_bound, ratio_higher_bound, frequence = 32.0):
         self.poisson_rate = poisson_rate
         self.index = index
-
+        
         self.task_data_lower_bound = task_data_lower_bound
         self.task_data_higher_bound = task_data_higher_bound
         self.ratio_lower_bound = ratio_lower_bound
@@ -58,7 +79,8 @@ class MECServer(object):
         estimated_time = (client_workload + server_workload)  / self.frequence
 
         return estimated_time
-
+    
+    
 class BatchMigrationEnv(gym.Env):
     def __init__(self, env_parameters):
         self.is_full_action = env_parameters.is_full_action
@@ -69,7 +91,7 @@ class BatchMigrationEnv(gym.Env):
         else:
             self._action_spec = spaces.Discrete(6)
             self._action_dim = 6
-
+        
         self.migration_size_low = env_parameters.migration_size_low
         self.migration_size_high = env_parameters.migration_size_high
         self.migration_coefficient_low = env_parameters.migration_coefficient_low
@@ -275,10 +297,10 @@ class BatchMigrationEnv(gym.Env):
             service_index = user_position_index
         else:
             # the service index is the second dimension of true state
-            service_index = user_position_index                                                       #added
+            service_index = user_position_index
+            
 
         trans_rate = self._get_wireless_transmission_rate(user_position)
-
         server_workloads = []
         servers_computation_latencies = []
         for server in self.server_list:
@@ -300,7 +322,6 @@ class BatchMigrationEnv(gym.Env):
         servers_migration_num_of_hops = []
 
         communication_costs = []
-        
 
         current_migration_cost = self.get_migration_cost()
         current_migration_coefficient = self.get_migration_coefficient()
@@ -309,7 +330,7 @@ class BatchMigrationEnv(gym.Env):
 
         for idx, server in enumerate(self.server_list):
             num_of_hops = self._get_number_of_hops(user_position_index, server.index)
-
+            
             # Calculate the migration number of hops
             migration_num_of_hops = self._get_number_of_hops(service_index, server.index)
 
@@ -330,18 +351,79 @@ class BatchMigrationEnv(gym.Env):
                                  
             communication_costs.append(communication_cost)
             
-            if action != None:  ##added              
-                # print(f"action: {action}")                  
+            if action != None:  ##added                             
                 if idx == action:
-                    result_cost = float(self._state[trace_id][132]*0.2) / float(trans_rate) +\
+                    # print(f"action: {action}")
+                    # service_deploy = np.zeros((15, 1))
+                    # zero_index = np.random.randint(15)
+                    # service_deploy[zero_index] = 1
+                    
+                    service_deploy = [0] * 15
+                    service_deploy[random.randint(0,14)] = 1  
+                    service_deploy = [service_deploy[i:i+1] for i in range(0, len(service_deploy))]      
+                    # print(service_deploy)
+                                 
+                    temp = np.dot(matrix[idx],service_deploy)
+                    temp1 = np.dot(matrix, service_deploy)
+                    
+                    if temp == 1:                        
+                        result_cost = float(self._state[trace_id][132]*0.2) / float(trans_rate) +\
                         (self._state[trace_id][132]*0.2 / self._optical_fiber_trans_rate)*num_of_hops ##added
-                    precopy_delay = self._state[trace_id][197]*num_of_hops  ##added
+                        
+                        precopy_delay = self._state[trace_id][197]*num_of_hops  ##added
+                        
+                        # migrate_service_delay = 0
+                        
+                        # migrateservice_from_centralserver_delay = 0
+                    ## add 
                     # print(f"result_cost: {result_cost}")
                     # print(f"precopy_delay: {precopy_delay}")
-                    self.reward = self.reward - precopy_delay - result_cost ##added
-                
-            
-
+                        self.reward = self.reward - precopy_delay - result_cost ##added
+                    
+                    else:
+                        indices = np.where(temp1 == 1)
+                        server_host_app = []
+                        no_of_hops_from_action_to_server_host_app = []
+                        
+                        if indices[0].size > 0:                    
+                            for i in range(len(indices[0])):
+                                server_host_app.append(indices[0][i])
+                            
+                            for i in range(len(server_host_app)):
+                                no_of_hops_from_action_to_server_host_app.append(self._get_number_of_hops(action, server_host_app[i]))
+                                min_value = min(no_of_hops_from_action_to_server_host_app)
+                                min_index = no_of_hops_from_action_to_server_host_app.index(min_value)
+                                result = server_host_app[min_index]
+                                
+                                no_of_hop_act_to_sv_host_app = self._get_number_of_hops(action, result)
+                                
+                                migrate_service_delay = self._state[trace_id][197]*no_of_hop_act_to_sv_host_app
+                                
+                                result_cost = float(self._state[trace_id][132]*0.2) / float(trans_rate) +\
+                                    (self._state[trace_id][132]*0.2 / self._optical_fiber_trans_rate)*num_of_hops
+                                    
+                                precopy_delay = self._state[trace_id][197]*num_of_hops
+                                
+                                # migrateservice_from_centralserver_delay = 0
+                                
+                                self.reward = self.reward - precopy_delay - result_cost - migrate_service_delay
+                        else:
+                            migrateservice_from_centralserver_delay = self._state[trace_id][197]*(500/50)*5
+                            
+                            result_cost = float(self._state[trace_id][132]*0.2) / float(trans_rate) +\
+                                    (self._state[trace_id][132]*0.2 / self._optical_fiber_trans_rate)*num_of_hops
+                                    
+                            precopy_delay = self._state[trace_id][197]*num_of_hops
+                            
+                            # migrate_service_delay = 0
+                            
+                            self.reward = self.reward - precopy_delay - result_cost  - migrateservice_from_centralserver_delay  #- migrate_service_delay      
+                            # for idx1, server in enumerate(self.server_list):
+                            #     num_of_hops_action = self._get_number_of_hops(action, server.index) ##added the num of hops fr MEC_action to the others
+                            
+                        ##action doesnt host required service##
+                        
+                        
         # what we should return is the observation instead of the true state
         # state = [user_position_index, service_index, trans_rate, client_required_frequency,
         #         task_data_volume] + servers_computation_latencies + servers_num_of_hops
@@ -357,7 +439,7 @@ class BatchMigrationEnv(gym.Env):
         # observation = [self._user_position_index] + servers_computation_latencies + communication_costs
         # there are several state for the service and users
         state = [user_position_index, service_index] + servers_computation_latencies + communication_costs + \
-                [trans_rate, client_required_frequency, task_data_volume] + server_workloads + [current_migration_cost]   ##added
+                [trans_rate, client_required_frequency, task_data_volume] + server_workloads + [current_migration_cost] 
         num_of_hops = self._get_number_of_hops(user_position_index, service_index)
         observation = [user_position_index, trans_rate, task_data_volume, client_required_frequency]
 
@@ -420,10 +502,8 @@ class BatchMigrationEnv(gym.Env):
         # user_profile, service_workloads, servers_num_of_hops = self._get_info_from_current_state()
 
         computation_cost = self._state[trace_id][2+action]
-        communication_migration_cost = self._state[trace_id][2+self._num_base_station +action]
-        
-        # result_cost = self._state[trace_id][197 + action]
-        
+        communication_migration_cost = self._state[trace_id][2 + self._num_base_station + action]
+
         # print("————————step trace ------")
         # print("env action : ", action)
         # print("get current system info: ", self.current_system_state())

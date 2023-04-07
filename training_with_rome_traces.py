@@ -1,5 +1,5 @@
-from environment.batch_migration_env import EnvironmentParameters
-from environment.batch_migration_env import BatchMigrationEnv
+from environment.batch_migration_env_changing_add_service import EnvironmentParameters
+from environment.batch_migration_env_changing_add_service import BatchMigrationEnv
 from baselines.linear_baseline import LinearTimeBaseline
 from baselines.rnn_critic_network_baseline import RNNCriticNetworkBaseline
 from policies.rnn_policy_with_action_input import RNNPolicy

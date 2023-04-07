@@ -338,13 +338,15 @@ class BatchMigrationEnv(gym.Env):
                                     
                     result_cost = float(self._state[trace_id][132]*0.2) / float(trans_rate) +\
                         (self._state[trace_id][132]*0.2 / self._optical_fiber_trans_rate)*num_of_hops ##added
+                    
                     precopy_delay = 0 #self._state[trace_id][197]*num_of_hops  ##added
                 else:
                     communication_migration_cost_1 = float(self._state[trace_id][132]) / float(trans_rate) + self._state[trace_id][132]/50 + 0.1
                     computation_cost_1 = self._state[trace_id][2+action] 
                     
                     result_cost = float(self._state[trace_id][132]*0.2) / float(trans_rate) + (self._state[trace_id][132]*0.2)/50 + 0.1 
-                    precopy_delay = self._state[trace_id][197]*10     
+                    precopy_delay = self._state[trace_id][197]*500/50     
+                
                 self.reward = - communication_migration_cost_1 - computation_cost_1 - precopy_delay - result_cost ##added
                 
             

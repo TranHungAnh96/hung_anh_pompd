@@ -1,6 +1,6 @@
-from environment.batch_migration_env_11 import EnvironmentParameters
+from environment.batch_migration_env_DACM import EnvironmentParameters
 from environment.migration_env import MigrationEnv
-from environment.batch_migration_env_11 import BatchMigrationEnv
+from environment.batch_migration_env_DACM import BatchMigrationEnv
 from baselines.linear_baseline import LinearTimeBaseline
 from baselines.rnn_critic_network_baseline import RNNCriticNetworkBaseline
 from policies.rnn_policy_with_action_input import RNNPolicyWithValue
@@ -17,7 +17,7 @@ import numpy as np
 
 import os
 
-# os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 from utils import logger
 
@@ -147,5 +147,7 @@ if __name__ == "__main__":
                       eval_sampler=eval_sampler,
                       test_interval=10,
                       save_path='./checkpoints_san_64-bs-new-50/model_checkpoint_epoch_')
-
-    trainer.train(rnn_policy=True, is_test=False)
+    # Tạo phiên làm việc TensorFlow
+    sess = tf.compat.v1.Session(config=tf.compat.v1.ConfigProto(log_device_placement=True))
+    with tf.device('/device:GPU:0'):
+        trainer.train(rnn_policy=True, is_test=False)

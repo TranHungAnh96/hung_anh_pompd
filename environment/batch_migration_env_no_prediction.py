@@ -135,6 +135,7 @@ class BatchMigrationEnv(gym.Env):
         self.users_traces = self._read_traces_from_the_csv(env_parameters.traces_file_path, env_parameters.trace_start_index, self._num_traces)
         self._current_time_slot = [0] * self._num_traces
         self.batch_size = self._num_traces
+        self.reward = None
 
     def _initialize_servers_position(self):
         delta_x = self.map_width / self.num_horizon_servers
@@ -173,14 +174,14 @@ class BatchMigrationEnv(gym.Env):
         f.close()
         user_names = list(users_traces.keys())
         users_traces_list = []
-        print(f"_____________________start_index_________________________________: {start_index}")
-        print(f"_____________________num_of_trace_________________________________: {num_of_traces}")
+        # print(f"_____________________start_index_________________________________: {start_index}")
+        # print(f"_____________________num_of_trace_________________________________: {num_of_traces}")
         for i in range(start_index, (start_index+num_of_traces)):
             user_name = user_names[i]
             one_user_trace = users_traces[user_name][:: self.trace_interval]
             one_user_trace = one_user_trace[0:self.trace_length]
-            print(i)
-            print(f"_____________________one_user_trace_________________________________: {one_user_trace}")
+            # print(i)
+            # print(f"_____________________one_user_trace_________________________________: {one_user_trace}")
             users_traces_list.append(one_user_trace)
 
         return users_traces_list
@@ -274,11 +275,10 @@ class BatchMigrationEnv(gym.Env):
             service_index = user_position_index
         else:
             # the service index is the second dimension of true state
-            service_index = self._state[trace_id][1]
-            
-
+            service_index = user_position_index                                                       #added
 
         trans_rate = self._get_wireless_transmission_rate(user_position)
+
         server_workloads = []
         servers_computation_latencies = []
         for server in self.server_list:
@@ -300,13 +300,14 @@ class BatchMigrationEnv(gym.Env):
         servers_migration_num_of_hops = []
 
         communication_costs = []
+        
 
         current_migration_cost = self.get_migration_cost()
         current_migration_coefficient = self.get_migration_coefficient()
         self._migration_coefficient[trace_id] = current_migration_coefficient
         self._migration_cost[trace_id] = current_migration_cost
 
-        for server in self.server_list:
+        for idx, server in enumerate(self.server_list):
             num_of_hops = self._get_number_of_hops(user_position_index, server.index)
 
             # Calculate the migration number of hops
@@ -315,14 +316,31 @@ class BatchMigrationEnv(gym.Env):
             servers_migration_num_of_hops.append(migration_num_of_hops)
             servers_num_of_hops.append(num_of_hops)
 
-            wired_communication_cost = (task_data_volume / self._optical_fiber_trans_rate) * min(num_of_hops, 1) \
-                                       + self.backhaul_coefficient * num_of_hops
-            #wired_communication_cost = self._optical_fiber_trans_rate * num_of_hops
-            #here we change a way to calculate the migration costs
+            wired_communication_cost = (task_data_volume / self._optical_fiber_trans_rate) * min(num_of_hops, 1) * num_of_hops
+            # wired_communication_cost = self._optical_fiber_trans_rate * num_of_hops
+                    
+            # wired_communication_cost_result = (task_data_volume*0.2 / self._optical_fiber_trans_rate) * min(num_of_hops, 1)*num_of_hops ##added 
+            
+            # current_migration_costs.append()    
+            
+            # there we change a way to calculate the migration costs
+            
             communication_cost = float(task_data_volume) / float(trans_rate) + wired_communication_cost + \
-                                 (migration_num_of_hops * current_migration_coefficient + current_migration_cost)
-
+                                 migration_num_of_hops * current_migration_cost
+                                 
             communication_costs.append(communication_cost)
+            
+            if action != None:  ##added              
+                # print(f"action: {action}")                  
+                if idx == action:
+                    result_cost = float(self._state[trace_id][132]*0.2) / float(trans_rate) +\
+                        (self._state[trace_id][132]*0.2 / self._optical_fiber_trans_rate)*num_of_hops ##added
+                    precopy_delay = self._state[trace_id][197]*num_of_hops  ##added
+                    # print(f"result_cost: {result_cost}")
+                    # print(f"precopy_delay: {precopy_delay}")
+                    self.reward = self.reward - precopy_delay - result_cost - 7 ##added
+                
+            
 
         # what we should return is the observation instead of the true state
         # state = [user_position_index, service_index, trans_rate, client_required_frequency,
@@ -339,7 +357,7 @@ class BatchMigrationEnv(gym.Env):
         # observation = [self._user_position_index] + servers_computation_latencies + communication_costs
         # there are several state for the service and users
         state = [user_position_index, service_index] + servers_computation_latencies + communication_costs + \
-                [trans_rate, client_required_frequency, task_data_volume] + server_workloads
+                [trans_rate, client_required_frequency, task_data_volume] + server_workloads + [current_migration_cost]   ##added
         num_of_hops = self._get_number_of_hops(user_position_index, service_index)
         observation = [user_position_index, trans_rate, task_data_volume, client_required_frequency]
 
@@ -402,8 +420,10 @@ class BatchMigrationEnv(gym.Env):
         # user_profile, service_workloads, servers_num_of_hops = self._get_info_from_current_state()
 
         computation_cost = self._state[trace_id][2+action]
-        communication_migration_cost = self._state[trace_id][2 + self._num_base_station + action]
-
+        communication_migration_cost = self._state[trace_id][2+self._num_base_station +action]
+        
+        # result_cost = self._state[trace_id][197 + action]
+        
         # print("————————step trace ------")
         # print("env action : ", action)
         # print("get current system info: ", self.current_system_state())
@@ -427,7 +447,7 @@ class BatchMigrationEnv(gym.Env):
         # print("step_trace: "+str(trace_id) + ": ", self._state[trace_id])
         # print("step_trace: "+str(trace_id) + " action: ", action)
 
-        reward = self._reward_func((computation_cost + communication_migration_cost))
+        self.reward = self._reward_func((computation_cost + communication_migration_cost))
 
         self._current_time_slot[trace_id] = self._current_time_slot[trace_id] + 1
         if self._current_time_slot[trace_id] == self._total_time_slot_length:
@@ -437,7 +457,7 @@ class BatchMigrationEnv(gym.Env):
             done = False
             state, observation = self._make_state_according_to_action(trace_id, action=action)
 
-        return state, observation, reward, done, state
+        return state, observation, self.reward, done, state
 
     def step(self, action):
         states = []
