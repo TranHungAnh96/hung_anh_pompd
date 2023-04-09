@@ -142,7 +142,7 @@ if __name__ == "__main__":
                       sample_processor=sampler_process,
                       update_batch_size=480,
                       policy=rnn_policy,
-                      n_itr=60,
+                      n_itr=120,
                       save_interval=5,
                       eval_sampler=eval_sampler,
                       test_interval=10,

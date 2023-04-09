@@ -437,7 +437,7 @@ if __name__ == "__main__":
                                                     map_width=8000.0, map_height=8000.0,
                                                    num_horizon_servers=8, num_vertical_servers=8,
                                                    traces_file_path='./rome_traces_coordinate.txt',
-                                                   transmission_rates=[18.0, 18.0, 18.0, 18.0, 18.0],
+                                                   transmission_rates=[20.0, 16.0, 12.0, 8.0, 4.0],
                                                    trace_length=100,
                                                    trace_interval=10,
                                                    is_full_observation=True,

@@ -366,8 +366,8 @@ def worker(remote, parent_remote, env_pickle, n_envs, max_path_length, seed):
 
 
 if __name__ == "__main__":
-    from environment.migration_env import EnvironmentParameters
-    from environment.migration_env import MigrationEnv
+    from environment.batch_migration_env_changing_add_service import EnvironmentParameters
+    from environment.batch_migration_env_changing_add_service import MigrationEnv
     from environment.batch_migration_env_DACM import BatchMigrationEnv
     import numpy as np
 
@@ -382,7 +382,7 @@ if __name__ == "__main__":
                                                    ratio_higher_bound=3200.0, map_width=4500.0, map_height=3500.0,
                                                    num_horizon_servers=9, num_vertical_servers=7,
                                                    traces_file_path='../environment/default_scenario_LocationSnapshotReport.txt',
-                                                   transmission_rates=[20.0, 16.0, 12.0, 8.0, 4.0],
+                                                   transmission_rates=[18.0, 18.0, 18.0, 18.0, 18.0],
                                                    trace_length=100,
                                                    is_full_observation=True,
                                                    is_full_action=True)

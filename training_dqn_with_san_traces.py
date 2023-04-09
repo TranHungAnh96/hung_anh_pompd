@@ -1,6 +1,6 @@
-from environment.batch_migration_env_11 import EnvironmentParameters
+from environment.batch_migration_env_default import EnvironmentParameters
 from environment.migration_env import MigrationEnv
-from environment.batch_migration_env_11 import BatchMigrationEnv
+from environment.batch_migration_env_default import BatchMigrationEnv
 
 from policies.q_network import QNetwork
 from sampler.replay_buffer import SequentialReplayBuffer
@@ -13,7 +13,7 @@ import numpy as np
 
 import os
 
-# os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 from utils import logger
 

@@ -367,7 +367,7 @@ class BatchMigrationEnv(gym.Env):
                     temp1 = np.dot(matrix, service_deploy)
                     
                     if temp == 1:                        
-                        result_cost = float(self._state[trace_id][132]*0.2) / float(trans_rate) +\
+                        result_cost = float(self._state[trace_id][132]*0.2) / 300 +\
                         (self._state[trace_id][132]*0.2 / self._optical_fiber_trans_rate)*num_of_hops ##added
                         
                         precopy_delay = self._state[trace_id][197]*num_of_hops  ##added
@@ -399,7 +399,7 @@ class BatchMigrationEnv(gym.Env):
                                 
                                 migrate_service_delay = self._state[trace_id][197]*no_of_hop_act_to_sv_host_app
                                 
-                                result_cost = float(self._state[trace_id][132]*0.2) / float(trans_rate) +\
+                                result_cost = float(self._state[trace_id][132]*0.2) / 300 + \
                                     (self._state[trace_id][132]*0.2 / self._optical_fiber_trans_rate)*num_of_hops
                                     
                                 precopy_delay = self._state[trace_id][197]*num_of_hops
@@ -408,9 +408,9 @@ class BatchMigrationEnv(gym.Env):
                                 
                                 self.reward = self.reward - precopy_delay - result_cost - migrate_service_delay
                         else:
-                            migrateservice_from_centralserver_delay = self._state[trace_id][197]*(500/50)*5
+                            migrateservice_from_centralserver_delay = self._state[trace_id][197]*50
                             
-                            result_cost = float(self._state[trace_id][132]*0.2) / float(trans_rate) +\
+                            result_cost = float(self._state[trace_id][132]*0.2) / 300 +\
                                     (self._state[trace_id][132]*0.2 / self._optical_fiber_trans_rate)*num_of_hops
                                     
                             precopy_delay = self._state[trace_id][197]*num_of_hops

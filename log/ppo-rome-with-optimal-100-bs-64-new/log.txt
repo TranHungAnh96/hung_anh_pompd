@@ -2,578 +2,133 @@ Logging to ./log/ppo-rome-with-optimal-100-bs-64-new
 
  ---------------- Iteration 0 ----------------
 Sampling trajectories from environment ...
-Sampling spend time: 304.2906377315521s
+Sampling spend time: 601.4221894741058s
 Processing trajectories ...
-Processing spend time: 537.7988495826721s
-Baselien algorithms: 19.564485788345337s
+Processing spend time: 1649.5944848060608s
+Baselien algorithms: 19.21900510787964s
 Updating policies ....
-Update spend time: 71.11766958236694s
+Update spend time: 230.0273461341858s
 -------------------------------------------
 | Itr                     | 0             |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.44e+03     |
-| average reward:         | -7166.57      |
+| average always migra... | -1.38e+03     |
+| average never migrat... | -1.28e+03     |
+| average random reward:  | -2.24e+03     |
+| average reward:         | -2948.33      |
 | batch size              | 160           |
-| entropy loss:           | 121.13        |
+| entropy loss:           | 121.41        |
 | optimal migrate rewa... | -0            |
-| policy loss:            | 1.52          |
+| policy loss:            | 1.76          |
 | value loss:             | 15.0          |
 -------------------------------------------
 save model weights ... 
 
  ---------------- Iteration 1 ----------------
 Sampling trajectories from environment ...
-Sampling spend time: 316.91488218307495s
+Sampling spend time: 488.2135157585144s
 Processing trajectories ...
-Processing spend time: 540.6492791175842s
-Baselien algorithms: 19.69813299179077s
+Processing spend time: 1673.0114090442657s
+Baselien algorithms: 19.16597032546997s
 Updating policies ....
-Update spend time: 68.31304264068604s
+Update spend time: 241.56194400787354s
 -------------------------------------------
 | Itr                     | 1             |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.45e+03     |
-| average reward:         | -7082.12      |
+| average always migra... | -1.38e+03     |
+| average never migrat... | -1.28e+03     |
+| average random reward:  | -2.24e+03     |
+| average reward:         | -2896.63      |
 | batch size              | 160           |
-| entropy loss:           | 121.55        |
+| entropy loss:           | 121.65        |
 | optimal migrate rewa... | -0            |
-| policy loss:            | -0.03         |
+| policy loss:            | -0.01         |
 | value loss:             | 15.0          |
 -------------------------------------------
 
  ---------------- Iteration 2 ----------------
 Sampling trajectories from environment ...
-Sampling spend time: 304.05842208862305s
+Sampling spend time: 586.703647851944s
 Processing trajectories ...
-Processing spend time: 539.2424018383026s
-Baselien algorithms: 19.89407205581665s
+Processing spend time: 1680.33553481102s
+Baselien algorithms: 19.096999883651733s
 Updating policies ....
-Update spend time: 69.55882859230042s
+Update spend time: 258.8548889160156s
 -------------------------------------------
 | Itr                     | 2             |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.44e+03     |
-| average reward:         | -6907.9       |
+| average always migra... | -1.38e+03     |
+| average never migrat... | -1.28e+03     |
+| average random reward:  | -2.24e+03     |
+| average reward:         | -2863.86      |
 | batch size              | 160           |
-| entropy loss:           | 121.19        |
+| entropy loss:           | 121.5         |
 | optimal migrate rewa... | -0            |
-| policy loss:            | -0.11         |
+| policy loss:            | -0.13         |
 | value loss:             | 15.0          |
 -------------------------------------------
 
  ---------------- Iteration 3 ----------------
 Sampling trajectories from environment ...
-Sampling spend time: 304.5527894496918s
+Sampling spend time: 525.4424583911896s
 Processing trajectories ...
-Processing spend time: 543.3322260379791s
-Baselien algorithms: 19.60114574432373s
+Processing spend time: 1674.7533342838287s
+Baselien algorithms: 19.612233638763428s
 Updating policies ....
-Update spend time: 70.41580390930176s
+Update spend time: 281.1363718509674s
 -------------------------------------------
 | Itr                     | 3             |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.44e+03     |
-| average reward:         | -6724.52      |
+| average always migra... | -1.38e+03     |
+| average never migrat... | -1.28e+03     |
+| average random reward:  | -2.24e+03     |
+| average reward:         | -2805.88      |
 | batch size              | 160           |
-| entropy loss:           | 120.38        |
+| entropy loss:           | 120.71        |
 | optimal migrate rewa... | -0            |
-| policy loss:            | -0.11         |
+| policy loss:            | -0.16         |
 | value loss:             | 15.0          |
 -------------------------------------------
 
  ---------------- Iteration 4 ----------------
 Sampling trajectories from environment ...
-Sampling spend time: 313.3385715484619s
+Sampling spend time: 585.6892628669739s
 Processing trajectories ...
-Processing spend time: 545.0917160511017s
-Baselien algorithms: 19.529207468032837s
+Processing spend time: 1676.2936902046204s
+Baselien algorithms: 19.058085441589355s
 Updating policies ....
-Update spend time: 68.17685294151306s
+Update spend time: 287.54087829589844s
 -------------------------------------------
 | Itr                     | 4             |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.45e+03     |
-| average reward:         | -6535.8       |
+| average always migra... | -1.38e+03     |
+| average never migrat... | -1.28e+03     |
+| average random reward:  | -2.24e+03     |
+| average reward:         | -2711.35      |
 | batch size              | 160           |
-| entropy loss:           | 119.49        |
+| entropy loss:           | 119.35        |
 | optimal migrate rewa... | -0            |
-| policy loss:            | -0.12         |
+| policy loss:            | -0.17         |
 | value loss:             | 15.0          |
 -------------------------------------------
 
  ---------------- Iteration 5 ----------------
 Sampling trajectories from environment ...
-Sampling spend time: 309.70446157455444s
+Sampling spend time: 744.1895668506622s
 Processing trajectories ...
-Processing spend time: 546.7384102344513s
-Baselien algorithms: 19.602080821990967s
+Processing spend time: 1672.2625603675842s
+Baselien algorithms: 26.806402683258057s
 Updating policies ....
-Update spend time: 68.25142812728882s
+Update spend time: 241.11314845085144s
 -------------------------------------------
 | Itr                     | 5             |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.45e+03     |
-| average reward:         | -6335.18      |
+| average always migra... | -1.38e+03     |
+| average never migrat... | -1.28e+03     |
+| average random reward:  | -2.24e+03     |
+| average reward:         | -2647.86      |
 | batch size              | 160           |
-| entropy loss:           | 118.07        |
+| entropy loss:           | 117.5         |
 | optimal migrate rewa... | -0            |
-| policy loss:            | -0.11         |
+| policy loss:            | -0.16         |
 | value loss:             | 15.0          |
 -------------------------------------------
 save model weights ... 
 
  ---------------- Iteration 6 ----------------
 Sampling trajectories from environment ...
-Sampling spend time: 307.2200117111206s
-Processing trajectories ...
-Processing spend time: 541.6015141010284s
-Baselien algorithms: 19.570035696029663s
-Updating policies ....
-Update spend time: 67.92486476898193s
--------------------------------------------
-| Itr                     | 6             |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.45e+03     |
-| average reward:         | -6198.97      |
-| batch size              | 160           |
-| entropy loss:           | 116.46        |
-| optimal migrate rewa... | -0            |
-| policy loss:            | -0.11         |
-| value loss:             | 15.0          |
--------------------------------------------
-
- ---------------- Iteration 7 ----------------
-Sampling trajectories from environment ...
-Sampling spend time: 305.41228199005127s
-Processing trajectories ...
-Processing spend time: 529.4898290634155s
-Baselien algorithms: 19.54600191116333s
-Updating policies ....
-Update spend time: 68.0176100730896s
--------------------------------------------
-| Itr                     | 7             |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.44e+03     |
-| average reward:         | -6041.29      |
-| batch size              | 160           |
-| entropy loss:           | 114.85        |
-| optimal migrate rewa... | -0            |
-| policy loss:            | -0.1          |
-| value loss:             | 15.0          |
--------------------------------------------
-
- ---------------- Iteration 8 ----------------
-Sampling trajectories from environment ...
-Sampling spend time: 303.12149715423584s
-Processing trajectories ...
-Processing spend time: 529.9272632598877s
-Baselien algorithms: 19.570101499557495s
-Updating policies ....
-Update spend time: 68.10066366195679s
--------------------------------------------
-| Itr                     | 8             |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.44e+03     |
-| average reward:         | -5893.75      |
-| batch size              | 160           |
-| entropy loss:           | 112.87        |
-| optimal migrate rewa... | -0            |
-| policy loss:            | -0.09         |
-| value loss:             | 15.0          |
--------------------------------------------
-
- ---------------- Iteration 9 ----------------
-Sampling trajectories from environment ...
-Sampling spend time: 304.0103485584259s
-Processing trajectories ...
-Processing spend time: 530.5620303153992s
-Baselien algorithms: 20.21204400062561s
-Updating policies ....
-Update spend time: 67.9760365486145s
--------------------------------------------
-| Itr                     | 9             |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.44e+03     |
-| average reward:         | -5757.77      |
-| batch size              | 160           |
-| entropy loss:           | 111.4         |
-| optimal migrate rewa... | -0            |
-| policy loss:            | -0.07         |
-| value loss:             | 15.0          |
--------------------------------------------
-
- ---------------- Iteration 10 ----------------
-Sampling trajectories from environment ...
-Sampling spend time: 300.7128870487213s
-Processing trajectories ...
-Processing spend time: 530.857186794281s
-Baselien algorithms: 19.681984424591064s
-Updating policies ....
-Update spend time: 68.1134786605835s
--------------------------------------------
-| Itr                     | 10            |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.44e+03     |
-| average reward:         | -5649.73      |
-| batch size              | 160           |
-| entropy loss:           | 109.28        |
-| optimal migrate rewa... | -0            |
-| policy loss:            | -0.07         |
-| value loss:             | 15.0          |
--------------------------------------------
-save model weights ... 
-
- ---------------- Iteration 11 ----------------
-Sampling trajectories from environment ...
-Sampling spend time: 299.11144757270813s
-Processing trajectories ...
-Processing spend time: 533.0262970924377s
-Baselien algorithms: 19.475932598114014s
-Updating policies ....
-Update spend time: 68.08877992630005s
--------------------------------------------
-| Itr                     | 11            |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.44e+03     |
-| average reward:         | -5574.19      |
-| batch size              | 160           |
-| entropy loss:           | 108.02        |
-| optimal migrate rewa... | -0            |
-| policy loss:            | -0.06         |
-| value loss:             | 15.0          |
--------------------------------------------
-
- ---------------- Iteration 12 ----------------
-Sampling trajectories from environment ...
-Sampling spend time: 297.1859130859375s
-Processing trajectories ...
-Processing spend time: 530.670835018158s
-Baselien algorithms: 19.542078495025635s
-Updating policies ....
-Update spend time: 68.33176565170288s
--------------------------------------------
-| Itr                     | 12            |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.44e+03     |
-| average reward:         | -5448.59      |
-| batch size              | 160           |
-| entropy loss:           | 106.6         |
-| optimal migrate rewa... | -0            |
-| policy loss:            | -0.06         |
-| value loss:             | 15.0          |
--------------------------------------------
-
- ---------------- Iteration 13 ----------------
-Sampling trajectories from environment ...
-Sampling spend time: 297.28904008865356s
-Processing trajectories ...
-Processing spend time: 534.8109588623047s
-Baselien algorithms: 19.60714840888977s
-Updating policies ....
-Update spend time: 68.11427569389343s
--------------------------------------------
-| Itr                     | 13            |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.45e+03     |
-| average reward:         | -5385.69      |
-| batch size              | 160           |
-| entropy loss:           | 104.85        |
-| optimal migrate rewa... | -0            |
-| policy loss:            | -0.05         |
-| value loss:             | 15.0          |
--------------------------------------------
-
- ---------------- Iteration 14 ----------------
-Sampling trajectories from environment ...
-Sampling spend time: 291.9080140590668s
-Processing trajectories ...
-Processing spend time: 544.6142446994781s
-Baselien algorithms: 20.185925722122192s
-Updating policies ....
-Update spend time: 69.27660036087036s
--------------------------------------------
-| Itr                     | 14            |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.45e+03     |
-| average reward:         | -5335.28      |
-| batch size              | 160           |
-| entropy loss:           | 102.71        |
-| optimal migrate rewa... | -0            |
-| policy loss:            | -0.05         |
-| value loss:             | 15.0          |
--------------------------------------------
-
- ---------------- Iteration 15 ----------------
-Sampling trajectories from environment ...
-Sampling spend time: 299.7412323951721s
-Processing trajectories ...
-Processing spend time: 556.1538903713226s
-Baselien algorithms: 19.761953592300415s
-Updating policies ....
-Update spend time: 69.66441917419434s
--------------------------------------------
-| Itr                     | 15            |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.45e+03     |
-| average reward:         | -5258.88      |
-| batch size              | 160           |
-| entropy loss:           | 101.3         |
-| optimal migrate rewa... | -0            |
-| policy loss:            | -0.02         |
-| value loss:             | 15.0          |
--------------------------------------------
-save model weights ... 
-
- ---------------- Iteration 16 ----------------
-Sampling trajectories from environment ...
-Sampling spend time: 322.25842571258545s
-Processing trajectories ...
-Processing spend time: 538.6432113647461s
-Baselien algorithms: 19.96361255645752s
-Updating policies ....
-Update spend time: 70.83019733428955s
--------------------------------------------
-| Itr                     | 16            |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.45e+03     |
-| average reward:         | -5237.48      |
-| batch size              | 160           |
-| entropy loss:           | 100.47        |
-| optimal migrate rewa... | -0            |
-| policy loss:            | -0.02         |
-| value loss:             | 15.0          |
--------------------------------------------
-
- ---------------- Iteration 17 ----------------
-Sampling trajectories from environment ...
-Sampling spend time: 327.72945284843445s
-Processing trajectories ...
-Processing spend time: 550.3230066299438s
-Baselien algorithms: 19.765536546707153s
-Updating policies ....
-Update spend time: 69.53746628761292s
--------------------------------------------
-| Itr                     | 17            |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.45e+03     |
-| average reward:         | -5178.06      |
-| batch size              | 160           |
-| entropy loss:           | 99.65         |
-| optimal migrate rewa... | -0            |
-| policy loss:            | -0.02         |
-| value loss:             | 15.0          |
--------------------------------------------
-
- ---------------- Iteration 18 ----------------
-Sampling trajectories from environment ...
-Sampling spend time: 323.67430901527405s
-Processing trajectories ...
-Processing spend time: 535.786810874939s
-Baselien algorithms: 19.687275409698486s
-Updating policies ....
-Update spend time: 69.16489005088806s
--------------------------------------------
-| Itr                     | 18            |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.45e+03     |
-| average reward:         | -5170.23      |
-| batch size              | 160           |
-| entropy loss:           | 99.49         |
-| optimal migrate rewa... | -0            |
-| policy loss:            | -0.0          |
-| value loss:             | 15.0          |
--------------------------------------------
-
- ---------------- Iteration 19 ----------------
-Sampling trajectories from environment ...
-Sampling spend time: 318.07345032691956s
-Processing trajectories ...
-Processing spend time: 533.9620161056519s
-Baselien algorithms: 19.650680780410767s
-Updating policies ....
-Update spend time: 69.2461929321289s
--------------------------------------------
-| Itr                     | 19            |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.44e+03     |
-| average reward:         | -5174.93      |
-| batch size              | 160           |
-| entropy loss:           | 98.91         |
-| optimal migrate rewa... | -0            |
-| policy loss:            | -0.03         |
-| value loss:             | 15.0          |
--------------------------------------------
-
- ---------------- Iteration 20 ----------------
-Sampling trajectories from environment ...
-Sampling spend time: 320.0349431037903s
-Processing trajectories ...
-Processing spend time: 537.7249872684479s
-Baselien algorithms: 20.228147506713867s
-Updating policies ....
-Update spend time: 70.5424952507019s
--------------------------------------------
-| Itr                     | 20            |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.44e+03     |
-| average reward:         | -5142.26      |
-| batch size              | 160           |
-| entropy loss:           | 97.81         |
-| optimal migrate rewa... | -0            |
-| policy loss:            | -0.02         |
-| value loss:             | 15.0          |
--------------------------------------------
-save model weights ... 
-
- ---------------- Iteration 21 ----------------
-Sampling trajectories from environment ...
-Sampling spend time: 314.6928548812866s
-Processing trajectories ...
-Processing spend time: 529.5550413131714s
-Baselien algorithms: 19.564101457595825s
-Updating policies ....
-Update spend time: 68.03200674057007s
--------------------------------------------
-| Itr                     | 21            |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.44e+03     |
-| average reward:         | -5094.92      |
-| batch size              | 160           |
-| entropy loss:           | 97.4          |
-| optimal migrate rewa... | -0            |
-| policy loss:            | -0.01         |
-| value loss:             | 15.0          |
--------------------------------------------
-
- ---------------- Iteration 22 ----------------
-Sampling trajectories from environment ...
-Sampling spend time: 293.01208686828613s
-Processing trajectories ...
-Processing spend time: 535.9427273273468s
-Baselien algorithms: 19.535852193832397s
-Updating policies ....
-Update spend time: 68.14583826065063s
--------------------------------------------
-| Itr                     | 22            |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.45e+03     |
-| average reward:         | -5093.05      |
-| batch size              | 160           |
-| entropy loss:           | 96.7          |
-| optimal migrate rewa... | -0            |
-| policy loss:            | -0.0          |
-| value loss:             | 15.0          |
--------------------------------------------
-
- ---------------- Iteration 23 ----------------
-Sampling trajectories from environment ...
-Sampling spend time: 300.54724192619324s
-Processing trajectories ...
-Processing spend time: 538.950630903244s
-Baselien algorithms: 19.750010013580322s
-Updating policies ....
-Update spend time: 68.45974016189575s
--------------------------------------------
-| Itr                     | 23            |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.45e+03     |
-| average reward:         | -5062.81      |
-| batch size              | 160           |
-| entropy loss:           | 96.95         |
-| optimal migrate rewa... | -0            |
-| policy loss:            | 0.0           |
-| value loss:             | 15.0          |
--------------------------------------------
-
- ---------------- Iteration 24 ----------------
-Sampling trajectories from environment ...
-Sampling spend time: 337.1922605037689s
-Processing trajectories ...
-Processing spend time: 576.093222618103s
-Baselien algorithms: 20.348019123077393s
-Updating policies ....
-Update spend time: 74.87532186508179s
--------------------------------------------
-| Itr                     | 24            |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.44e+03     |
-| average reward:         | -5062.23      |
-| batch size              | 160           |
-| entropy loss:           | 95.55         |
-| optimal migrate rewa... | -0            |
-| policy loss:            | -0.02         |
-| value loss:             | 15.0          |
--------------------------------------------
-
- ---------------- Iteration 25 ----------------
-Sampling trajectories from environment ...
-Sampling spend time: 347.2513802051544s
-Processing trajectories ...
-Processing spend time: 580.1658022403717s
-Baselien algorithms: 20.542076110839844s
-Updating policies ....
-Update spend time: 75.87203764915466s
--------------------------------------------
-| Itr                     | 25            |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.45e+03     |
-| average reward:         | -5011.93      |
-| batch size              | 160           |
-| entropy loss:           | 95.82         |
-| optimal migrate rewa... | -0            |
-| policy loss:            | 0.01          |
-| value loss:             | 15.0          |
--------------------------------------------
-save model weights ... 
-
- ---------------- Iteration 26 ----------------
-Sampling trajectories from environment ...
-Sampling spend time: 365.42237663269043s
-Processing trajectories ...
-Processing spend time: 587.618328332901s
-Baselien algorithms: 20.422476053237915s
-Updating policies ....
-Update spend time: 76.09332847595215s
--------------------------------------------
-| Itr                     | 26            |
-| average always migra... | -1.57e+03     |
-| average never migrat... | -1.48e+03     |
-| average random reward:  | -2.45e+03     |
-| average reward:         | -5032.31      |
-| batch size              | 160           |
-| entropy loss:           | 95.19         |
-| optimal migrate rewa... | -0            |
-| policy loss:            | 0.0           |
-| value loss:             | 15.0          |
--------------------------------------------
-
- ---------------- Iteration 27 ----------------
-Sampling trajectories from environment ...
-Sampling spend time: 315.8942985534668s
+Sampling spend time: 690.647664308548s
 Processing trajectories ...
