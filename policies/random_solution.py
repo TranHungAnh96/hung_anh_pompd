@@ -65,7 +65,7 @@ def random_solution(env, system_infos):
 
 if __name__ == "__main__":
     from environment.migration_env import MigrationEnv
-    from environment.batch_migration_env_11 import BatchMigrationEnv
+    from environment.batch_migration_env_changing_add_service import BatchMigrationEnv
     from environment.migration_env import EnvironmentParameters
     from sampler.migration_sampler import MigrationSampler
     from sampler.migration_sampler import MigrationSamplerProcess
@@ -78,7 +78,7 @@ if __name__ == "__main__":
   6,  6, 17,  8, 17, 16, 15, 18,  8, 17,  5, 11, 12, 17, 10, 17, 12, 12,  9, 18,  7, 17,  9, 13,
   8, 11, 12, 19, 11,  9,  5, 16,  9,  8, 10, 12, 20, 16,  8]
     env_default_parameters = EnvironmentParameters(num_traces=10,
-                                                   num_base_station=63, optical_fiber_trans_rate=60.0,
+                                                   num_base_station=63, optical_fiber_trans_rate=180.0,
                                                    server_poisson_rate=server_poisson_rates, client_poisson_rate=4,
                                                    server_task_data_lower_bound=(0.5 * 1024.0 * 1024.0),
                                                    server_task_data_higher_bound=(5 * 1024.0 * 1024.0),
@@ -88,7 +88,7 @@ if __name__ == "__main__":
                                                    ratio_higher_bound=3200.0, map_width=4500.0, map_height=3500.0,
                                                    num_horizon_servers=9, num_vertical_servers=7,
                                                    traces_file_path='../environment/default_scenario_LocationSnapshotReport.txt',
-                                                   transmission_rates=[20.0, 16.0, 12.0, 8.0, 4.0],
+                                                   transmission_rates=[18.0, 18.0, 18.0, 18.0, 18.0],
                                                    trace_length=100,
                                                    trace_interval=5,
                                                    is_full_observation=False,

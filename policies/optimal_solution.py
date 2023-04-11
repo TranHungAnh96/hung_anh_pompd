@@ -119,8 +119,8 @@ def optimal_solution_for_batch_system_infos(env, system_infos):
 
 if __name__ == "__main__":
     from environment.migration_env import MigrationEnv
-    from environment.batch_migration_env_11 import BatchMigrationEnv
-    from environment.batch_migration_env_11 import EnvironmentParameters
+    from environment.batch_migration_env_changing_add_service import BatchMigrationEnv
+    from environment.batch_migration_env_changing_add_service import EnvironmentParameters
     from sampler.migration_sampler import EvaluationSampler
     from sampler.migration_sampler import MigrationSamplerProcess
     from baselines.linear_baseline import LinearFeatureBaseline
@@ -153,7 +153,7 @@ if __name__ == "__main__":
                                                 num_traces=10,
                                                 server_frequency=128.0,  # GHz
                                                 num_base_station=number_of_base_state,
-                                                optical_fiber_trans_rate=1000.0,
+                                                optical_fiber_trans_rate=1500.0,
                                                 switch_coefficient = 0.02,
                                                 server_poisson_rate=possion_rate_vector, client_poisson_rate=2,
                                                 server_task_data_lower_bound=(4 * 1024.0 * 1024.0 * 8),
@@ -167,7 +167,7 @@ if __name__ == "__main__":
                                                 map_width=8000.0, map_height=8000.0,
                                                 num_horizon_servers=x_base_state, num_vertical_servers=y_base_state,
                                                 traces_file_path='../environment/san_traces_coordinate.txt',
-                                                transmission_rates=[60.0, 48.0, 36.0, 24.0, 12.0],  # Mbps
+                                                transmission_rates=[54.0, 54.0, 54.0, 54.0, 54.0],  # Mbps
                                                 trace_length=100,
                                                 trace_interval=3,
                                                 is_full_observation=False,

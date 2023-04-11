@@ -422,7 +422,7 @@ if __name__ == "__main__":
     possion_rate_vector = np.random.randint(5,21,size=64)
     env_default_parameters = EnvironmentParameters(trace_start_index=201,
                                                    num_traces=20,
-                                                   num_base_station=64, optical_fiber_trans_rate=60.0,
+                                                   num_base_station=64, optical_fiber_trans_rate=180.0,
                                                    server_poisson_rate=possion_rate_vector, 
                                                    client_poisson_rate=4,
                                                    server_frequency=32.0, # GHz

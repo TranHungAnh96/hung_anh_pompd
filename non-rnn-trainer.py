@@ -7,7 +7,7 @@ from policies.always_migrate_policy import AlwaysMigratePolicy
 from dracm_trainer import Trainer
 from environment.migration_env import EnvironmentParameters
 from environment.migration_env import MigrationEnv
-from environment.batch_migration_env_11 import BatchMigrationEnv
+from environment.batch_migration_env_changing_add_service import BatchMigrationEnv
 from baselines.critic_network_baseline import CriticNetworkBaseline
 from baselines.linear_baseline import LinearTimeBaseline
 from baselines.rnn_critic_network_baseline import RNNCriticNetworkBaseline
@@ -33,7 +33,7 @@ server_poisson_rate = [18,  8, 17, 19, 10, 13, 19, 12 , 8 ,10, 14 , 7, 17,  8, 1
   8, 11, 12, 19, 11,  9,  5, 16,  9,  8, 10, 12, 20, 16,  8]
 
 env_default_parameters = EnvironmentParameters(num_traces=10,
-                                               num_base_station=63, optical_fiber_trans_rate=60.0,
+                                               num_base_station=63, optical_fiber_trans_rate=180.0,
                                                server_poisson_rate=server_poisson_rate, client_poisson_rate=4,
                                                server_task_data_lower_bound=(0.5 * 1024.0 * 1024.0),
                                                server_task_data_higher_bound=(5 * 1024.0 * 1024.0),
@@ -43,7 +43,7 @@ env_default_parameters = EnvironmentParameters(num_traces=10,
                                                ratio_higher_bound=3200.0, map_width=4500.0, map_height=3500.0,
                                                num_horizon_servers=9, num_vertical_servers=7,
                                                traces_file_path='./environment/default_scenario_LocationSnapshotReport.txt',
-                                               transmission_rates=[20.0, 16.0, 12.0, 8.0, 4.0],
+                                               transmission_rates=[18.0, 18.0, 18.0, 18.0, 18.0],
                                                trace_length=100,
                                                is_full_observation=False,
                                                is_full_action=True)

@@ -1,6 +1,6 @@
 from environment.migration_env import EnvironmentParameters
 from environment.migration_env import MigrationEnv
-from environment.batch_migration_env_11 import BatchMigrationEnv
+from environment.batch_migration_env_changing_add_service import BatchMigrationEnv
 from policies.rnn_q_network import RNNQNetwork
 from sampler.replay_buffer import SequentialReplayBuffer
 from sampler.migration_sampler import MigrationSamplerForDRQN
@@ -30,7 +30,7 @@ env_default_parameters = EnvironmentParameters(trace_start_index=0,
                                                    num_traces=100,
                                                    server_frequency=480.0,  # GHz
                                                    num_base_station=number_of_base_state,
-                                                   optical_fiber_trans_rate=1000.0,
+                                                   optical_fiber_trans_rate=1500.0,
                                                    server_poisson_rate=possion_rate_vector, client_poisson_rate=4,
                                                    server_task_data_lower_bound=(3 * 1024.0 * 1024.0 * 8),
                                                    server_task_data_higher_bound=(10 * 1024.0 * 1024.0 * 8),
@@ -43,7 +43,7 @@ env_default_parameters = EnvironmentParameters(trace_start_index=0,
                                                    map_width=8000.0, map_height=8000.0,
                                                    num_horizon_servers=x_base_state, num_vertical_servers=y_base_state,
                                                    traces_file_path='./environment/rome_traces_coordinate.txt',
-                                                   transmission_rates=[100.0, 80.0, 60.0, 40.0, 20.0],  # Mbps
+                                                   transmission_rates=[96.0, 96.0, 96.0, 96.0, 96.0],  # Mbps
                                                    trace_length=100,
                                                    trace_interval=12, # time_slots interval 180s = 3min
                                                    is_full_observation=False,
@@ -53,7 +53,7 @@ env_eval_parameters = EnvironmentParameters(trace_start_index=120,
                                                    num_traces=30,
                                                    server_frequency=480.0,  # GHz
                                                    num_base_station=number_of_base_state,
-                                                   optical_fiber_trans_rate=1000.0,
+                                                   optical_fiber_trans_rate=1500.0,
                                                    server_poisson_rate=possion_rate_vector, client_poisson_rate=4,
                                                    server_task_data_lower_bound=(3 * 1024.0 * 1024.0 * 8),
                                                    server_task_data_higher_bound=(10 * 1024.0 * 1024.0 * 8),
@@ -66,7 +66,7 @@ env_eval_parameters = EnvironmentParameters(trace_start_index=120,
                                                    map_width=8000.0, map_height=8000.0,
                                                    num_horizon_servers=x_base_state, num_vertical_servers=y_base_state,
                                                    traces_file_path='./environment/rome_traces_coordinate.txt',
-                                                   transmission_rates=[100.0, 80.0, 60.0, 40.0, 20.0],  # Mbps
+                                                   transmission_rates=[96.0, 96.0, 96.0, 96.0, 96.0],  # Mbps
                                                    trace_length=100,
                                                    trace_interval=12,
                                                    is_full_observation=False,

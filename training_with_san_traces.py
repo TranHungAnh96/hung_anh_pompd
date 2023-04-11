@@ -1,6 +1,6 @@
-from environment.batch_migration_env_DACM import EnvironmentParameters
+from environment.batch_migration_env_changing_add_service import EnvironmentParameters
 from environment.migration_env import MigrationEnv
-from environment.batch_migration_env_DACM import BatchMigrationEnv
+from environment.batch_migration_env_changing_add_service import BatchMigrationEnv
 from baselines.linear_baseline import LinearTimeBaseline
 from baselines.rnn_critic_network_baseline import RNNCriticNetworkBaseline
 from policies.rnn_policy_with_action_input import RNNPolicyWithValue
@@ -44,7 +44,7 @@ if __name__ == "__main__":
                                                 num_traces=100,
                                                 server_frequency=128.0,  # GHz
                                                 num_base_station=number_of_base_state,
-                                                optical_fiber_trans_rate=500.0,
+                                                optical_fiber_trans_rate=1500.0,
                                                 backhaul_coefficient=0.02,
                                                 migration_coefficient_low=1.0,
                                                 migration_coefficient_high =3.0,
@@ -60,7 +60,7 @@ if __name__ == "__main__":
                                                 map_width=8000.0, map_height=8000.0,
                                                 num_horizon_servers=x_base_state, num_vertical_servers=y_base_state,
                                                 traces_file_path='./environment/san_traces_coordinate.txt',
-                                                transmission_rates=[60.0, 48.0, 36.0, 24.0, 12.0],  # Mbps
+                                                transmission_rates=[54.0, 54.0, 54.0, 54.0, 54.0],  # Mbps
                                                 trace_length=100,
                                                 trace_interval=3,
                                                 is_full_observation=False,
@@ -70,7 +70,7 @@ if __name__ == "__main__":
                                                 num_traces=30,
                                                 server_frequency=128.0,  # GHz
                                                 num_base_station=number_of_base_state,
-                                                optical_fiber_trans_rate=500.0,
+                                                optical_fiber_trans_rate=1500.0,
                                                 backhaul_coefficient=0.02,
                                                 migration_coefficient_low=1.0,
                                                 migration_coefficient_high=3.0,
@@ -87,7 +87,7 @@ if __name__ == "__main__":
                                                 map_width=8000.0, map_height=8000.0,
                                                 num_horizon_servers=x_base_state, num_vertical_servers=y_base_state,
                                                 traces_file_path='./environment/san_traces_coordinate.txt',
-                                                transmission_rates=[60.0, 48.0, 36.0, 24.0, 12.0],  # Mbps
+                                                transmission_rates=[54.0, 54.0, 54.0, 54.0, 54.0],  # Mbps
                                                 trace_length=100,
                                                 trace_interval=3,
                                                 is_full_observation=False,
@@ -140,7 +140,7 @@ if __name__ == "__main__":
                       algo=algo,
                       sampler=sampler,
                       sample_processor=sampler_process,
-                      update_batch_size=480,
+                      update_batch_size=160,
                       policy=rnn_policy,
                       n_itr=120,
                       save_interval=5,

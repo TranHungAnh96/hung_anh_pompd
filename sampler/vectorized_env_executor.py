@@ -366,13 +366,13 @@ def worker(remote, parent_remote, env_pickle, n_envs, max_path_length, seed):
 
 
 if __name__ == "__main__":
-    from environment.batch_migration_env_changing_add_service import EnvironmentParameters
-    from environment.batch_migration_env_changing_add_service import MigrationEnv
-    from environment.batch_migration_env_DACM import BatchMigrationEnv
+    from environment.migration_env import EnvironmentParameters
+    from environment.migration_env import MigrationEnv
+    from environment.batch_migration_env_changing_add_service import BatchMigrationEnv
     import numpy as np
 
     env_default_parameters = EnvironmentParameters(num_traces=10,
-                                                   num_base_station=63, optical_fiber_trans_rate=60.0,
+                                                   num_base_station=63, optical_fiber_trans_rate=180.0,
                                                    server_poisson_rate=20, client_poisson_rate=4,
                                                    server_task_data_lower_bound=(0.5 * 1024.0 * 1024.0),
                                                    server_task_data_higher_bound=(5 * 1024.0 * 1024.0),

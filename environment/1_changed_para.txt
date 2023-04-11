@@ -1,0 +1,70 @@
+I. sampler:
+    1. vectorize_env_executor:
+        
+        from environment.batch_migration_env_xxx import BatchMigrationEnv (371)
+
+        optical_fiber_trans_rate=180.0
+        transmission_rates=[18.0, 18.0, 18.0, 18.0, 18.0]
+
+    2. migration_sampler:
+        from environment.batch_migration_env_xxx import EnvironmentParameters (537)
+        from environment.batch_migration_env_xxx import BatchMigrationEnv     (538) 
+
+        optical_fiber_trans_rate=180.0
+        transmission_rates=[18.0, 18.0, 18.0, 18.0, 18.0]
+
+    3. replay_buffer:
+        from environment.batch_migration_env_xxx import EnvironmentParameters (53)
+        from environment.batch_migration_env_xxx import BatchMigrationEnv     (54)
+
+        optical_fiber_trans_rate=180.0
+        transmission_rates=[18.0, 18.0, 18.0, 18.0, 18.0]
+    
+II. policy:
+    1. rnn_policy_with_action_input:
+        optical_fiber_trans_rate=180.0
+        transmission_rates=[18.0, 18.0, 18.0, 18.0, 18.0]
+
+    2. always_migration_solution:
+        from environment.batch_migration_env_xxx BatchMigrationEnv              (70)
+        from environment.batch_migration_env_xxx import EnvironmentParameters   (71)
+        
+        optical_fiber_trans_rate=1500.0
+        transmission_rates=[54.0, 54.0, 54.0, 54.0, 54.0]
+    
+    3. fc_categorical_policy:
+        optical_fiber_trans_rate=180.0
+        transmission_rates=[18.0, 18.0, 18.0, 18.0, 18.0]
+    
+    4. no_migration_solution:
+        from environment.batch_migration_env_changing_add_service import BatchMigrationEnv (71)
+        optical_fiber_trans_rate=180.0
+        transmission_rates=[18.0, 18.0, 18.0, 18.0, 18.0]
+
+    5. optimal_solution
+        from environment.batch_migration_env_changing_add_service import BatchMigrationEnv      (122)
+        from environment.batch_migration_env_changing_add_service import EnvironmentParameters  (123)
+        optical_fiber_trans_rate=1500.0                                                         (old: 1000)
+        transmission_rates=[54.0, 54.0, 54.0, 54.0, 54.0]
+
+    6. random_solution
+        from environment.batch_migration_env_changing_add_service import BatchMigrationEnv       (68)
+        optical_fiber_trans_rate=180.0
+        transmission_rates=[18.0, 18.0, 18.0, 18.0, 18.0]
+
+III. outsider:
+    1. dracm_tester:
+        from environment.batch_migration_env_changing_add_service import EnvironmentParameters     (87)
+        from environment.batch_migration_env_changing_add_service import BatchMigrationEnv         (88)
+        optical_fiber_trans_rate=180.0
+        transmission_rates=[18.0, 18.0, 18.0, 18.0, 18.0]
+    
+    2. drqn_training:
+        from environment.batch_migration_env_changing_add_service import BatchMigrationEnv          (3)
+        optical_fiber_trans_rate=1500.0                                                             (old: 1000)
+        transmission_rates=[96.0, 96.0, 96.0, 96.0, 96.0]                                           (old: [100.0, 80.0, 60.0, 40.0, 20.0])
+    
+    3. non-rnn-trainer:
+        from environment.batch_migration_env_changing_add_service import BatchMigrationEnv           (10)
+        optical_fiber_trans_rate=180.0
+        transmission_rates=[18.0, 18.0, 18.0, 18.0, 18.0]

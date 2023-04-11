@@ -67,8 +67,8 @@ def always_migration_solution(env, system_infos):
     return always_migration_rewards
 
 if __name__ == "__main__":
-    from environment.batch_migration_env_11 import BatchMigrationEnv
-    from environment.batch_migration_env_11 import EnvironmentParameters
+    from environment.batch_migration_env_changing_add_service import BatchMigrationEnv
+    from environment.batch_migration_env_changing_add_service import EnvironmentParameters
     from sampler.migration_sampler import EvaluationSampler
     from sampler.migration_sampler import MigrationSampler
     from sampler.migration_sampler import MigrationSamplerProcess
@@ -122,7 +122,7 @@ if __name__ == "__main__":
                                                 num_traces=30,
                                                 server_frequency=128.0,  # GHz
                                                 num_base_station=number_of_base_state,
-                                                optical_fiber_trans_rate=500.0,
+                                                optical_fiber_trans_rate=1500.0,
                                                 backhaul_coefficient=0.02,
                                                 migration_coefficient_low=1.0,
                                                 migration_coefficient_high=3.0,
@@ -139,7 +139,7 @@ if __name__ == "__main__":
                                                 map_width=8000.0, map_height=8000.0,
                                                 num_horizon_servers=x_base_state, num_vertical_servers=y_base_state,
                                                 traces_file_path='../environment/rome_traces_coordinate.txt',
-                                                transmission_rates=[60.0, 48.0, 36.0, 24.0, 12.0],  # Mbps
+                                                transmission_rates=[54.0, 54.0, 54.0, 54.0, 54.0],  # Mbps
                                                 trace_length=100,
                                                 trace_interval=12,
                                                 is_full_observation=False,

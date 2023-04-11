@@ -1,1 +1,16 @@
 Logging to ./log/dqn-san-with-100-bs-64-new
+-------------------------------------------
+| always migrate reward   | 1.58e+03      |
+| eval reward             | -2321.897     |
+| q_value_loss            | 61.690598     |
+| random reward           | 2.3e+03       |
+| training average rew... | -2271.317     |
+-------------------------------------------
+save model weights ... 
+--------------------------------------------
+| always migrate reward   | 1.59e+03       |
+| eval reward             | -1155.7689     |
+| q_value_loss            | 62.010967      |
+| random reward           | 2.27e+03       |
+| training average rew... | -2266.9756     |
+--------------------------------------------

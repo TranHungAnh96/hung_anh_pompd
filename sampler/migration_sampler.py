@@ -534,8 +534,8 @@ class EvaluationSamplerForDRQN(Sampler):
 if __name__ == "__main__":
     from environment.migration_env import EnvironmentParameters
     from environment.migration_env import MigrationEnv
-    from environment.batch_migration_env_11 import EnvironmentParameters
-    from environment.batch_migration_env_11 import BatchMigrationEnv
+    from environment.batch_migration_env_changing_add_service import EnvironmentParameters
+    from environment.batch_migration_env_changing_add_service import BatchMigrationEnv
     from baselines.linear_baseline import LinearFeatureBaseline
     from policies.fc_categorical_policy import FCCategoricalPolicy
     from policies.rnn_policy_with_action_input import RNNPolicyWithValue
@@ -549,7 +549,7 @@ if __name__ == "__main__":
     # start point (41.856, 12.442), end point (41.928,12.5387), a region in Roman, Italy.
     env_default_parameters = EnvironmentParameters(trace_start_index=0,
                                                    num_traces=2,
-                                                   num_base_station=63, optical_fiber_trans_rate=60.0,
+                                                   num_base_station=63, optical_fiber_trans_rate=180.0,
                                                    server_poisson_rate=possion_rate_vector, client_poisson_rate=4,
                                                    server_task_data_lower_bound=(0.5 * 1024.0 * 1024.0),
                                                    server_task_data_higher_bound=(5 * 1024.0 * 1024.0),
@@ -559,7 +559,7 @@ if __name__ == "__main__":
                                                    ratio_higher_bound=3200.0, map_width=4500.0, map_height=3500.0,
                                                    num_horizon_servers=9, num_vertical_servers=7,
                                                    traces_file_path='../environment/default_scenario_LocationSnapshotReport.txt',
-                                                   transmission_rates=[20.0, 16.0, 12.0, 8.0, 4.0],
+                                                   transmission_rates=[18.0, 18.0, 18.0, 18.0, 18.0],
                                                    trace_length=100,
                                                    trace_interval=5,
                                                    is_full_observation=False,
