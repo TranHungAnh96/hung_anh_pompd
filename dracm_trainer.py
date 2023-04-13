@@ -2,6 +2,7 @@
 import tensorflow as tf
 import numpy as np
 import time
+import datetime
 from utils import logger
 from policies.random_migrate_policy import RandomMigratePolicy
 from policies.always_migrate_policy import AlwaysMigratePolicy
@@ -11,7 +12,6 @@ from policies.always_migration_solution import always_migration_solution
 from policies.optimal_solution import optimal_solution_for_batch_system_infos
 from policies.no_migration_solution import no_migration_solution
 from utils.logger import Logger
-
 class Trainer(object):
     def __init__(self,
                  train_env,
@@ -24,6 +24,7 @@ class Trainer(object):
                  n_itr,
                  save_interval,
                  save_path,
+                 file_name,
                  test_interval=0,
                  eval_sampler=None):
         self.train_env = train_env
@@ -38,6 +39,7 @@ class Trainer(object):
         self.eval_sampler = eval_sampler
         self.test_interval = test_interval
         self.save_path = save_path
+        self.file_name = file_name
 
     def train(self, rnn_policy=False, is_test=True, is_save =True, is_log=True,
               std_reward=0.0,
@@ -49,7 +51,7 @@ class Trainer(object):
         avg_ret = []
         avg_loss = []
         avg_latencies = []
-
+        summary_writer = tf.summary.create_file_writer('log_tensorboard/%s/%s/' %(self.file_name, datetime.datetime.now().strftime('%Y%m%d-%H%M%S')))
         for itr in range(self.n_itr):
             itr_start_time = time.time()
             logger.log("\n ---------------- Iteration %d ----------------" % itr)
@@ -99,9 +101,17 @@ class Trainer(object):
                 logger.logkv("average always migrate reward: ", -np.round(np.mean(avg_always_migrate_rewards),2))
                 logger.logkv("average never migrate rewards: ", -np.round(np.mean(no_migrate_rewards), 2))
                 logger.logkv("optimal migrate reward: ", -np.round(np.mean(optimal_migrate_rewards), 2))
-
                 logger.dumpkvs()
-
+                with summary_writer.as_default():
+                    print("LOG TENSORBOARD ITER ",itr)
+                    tf.summary.scalar('policy loss', np.round(np.mean(policy_losses), 2), step=itr)
+                    tf.summary.scalar('value loss', np.round(np.mean(value_losses), 2), step=itr)
+                    tf.summary.scalar('entropy loss', np.round(np.mean(ent_losses), 2), step=itr)
+                    tf.summary.scalar('average reward', np.round(np.mean(avg_reward), 2), step=itr)
+                    tf.summary.scalar('average random reward', -np.round(np.mean(avg_random_rewards), 2), step=itr)
+                    tf.summary.scalar('average always migrate reward', -np.round(np.mean(avg_always_migrate_rewards),2), step=itr)
+                    tf.summary.scalar('average never migrate rewards', -np.round(np.mean(no_migrate_rewards), 2), step=itr)
+                    tf.summary.scalar('optimal migrate reward', -np.round(np.mean(optimal_migrate_rewards), 2), step=itr)
             if itr % self.test_interval == 0 and is_test == True:
                 avg_ppo_rewards = 0.0
                 avg_random_rewards = 0.0

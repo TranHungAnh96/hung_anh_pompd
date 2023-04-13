@@ -23,12 +23,13 @@ from dracm_trainer import Trainer
 import itertools
 import numpy as np
 import tensorflow as tf
+import sys
 
 ##added/changed: is_full_observation=False --> True (l. 75, 102)
 
 
 import os
-os.environ["CUDA_VISIBLE_DEVICES"]="0"
+os.environ["CUDA_VISIBLE_DEVICES"]="1"
 
 from utils import logger
 
@@ -155,12 +156,10 @@ if __name__ == "__main__":
                       save_interval=5,
                       eval_sampler=eval_sampler,
                       test_interval=10,
+                      file_name =  os.path.basename(sys.argv[0]).split('.')[0],
                       save_path = './checkpoints_ppo_64-bs-new-2/model_checkpoint_epoch_')
 
-   # Tạo phiên làm việc TensorFlow
-    sess = tf.compat.v1.Session(config=tf.compat.v1.ConfigProto(log_device_placement=True))
-    with tf.device('/device:GPU:0'):
-        trainer.train(rnn_policy=True, is_test=False)
+    trainer.train(rnn_policy=True, is_test=False)
 # Chỉ định phiên làm việc đó sử dụng GPU
 # with tf.device('/device:GPU:0'):
     # Thực hiện các phép tính TensorFlow trên GPU

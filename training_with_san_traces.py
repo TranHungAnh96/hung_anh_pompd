@@ -1,3 +1,4 @@
+import sys
 from environment.batch_migration_env_changing_add_service import EnvironmentParameters
 from environment.migration_env import MigrationEnv
 from environment.batch_migration_env_changing_add_service import BatchMigrationEnv
@@ -17,7 +18,7 @@ import numpy as np
 
 import os
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 
 from utils import logger
 
@@ -146,6 +147,7 @@ if __name__ == "__main__":
                       save_interval=5,
                       eval_sampler=eval_sampler,
                       test_interval=10,
+                      file_name =  os.path.basename(sys.argv[0]).split('.')[0],
                       save_path='./checkpoints_san_64-bs-new-50/model_checkpoint_epoch_')
     # Tạo phiên làm việc TensorFlow
     sess = tf.compat.v1.Session(config=tf.compat.v1.ConfigProto(log_device_placement=True))
