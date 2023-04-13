@@ -1,0 +1,50 @@
+Logging to ./log/test_with_trace_number_30
+Load rnn model successfully....
+Load fc model successfully....
+Load rnn q network model successfully ....
+Load q network model successfully ....
+---- round 0 ----
+eval sample reward-872.2018
+eval fc ppo reward-1014.49146
+eval dqn reward-1028.6742
+eval drqn reward-1030.8333
+eval reward-882.35425
+eval random reward-2428.5149287045815
+eval always migration reward-1494.321889833485
+eval optimal reward-761.0966741235324
+eval mab-ts reward963.0303889552753
+no_migration_solution-1455.4597703876232
+---- round 1 ----
+eval sample reward-876.05524
+eval fc ppo reward-1004.97833
+eval dqn reward-1028.8728
+eval drqn reward-1030.5901
+eval reward-865.7708
+eval random reward-2441.5196918203
+eval always migration reward-1494.8829507291937
+eval optimal reward-753.4417573932624
+eval mab-ts reward954.666851691405
+no_migration_solution-1442.864757836219
+---- round 2 ----
+eval sample reward-862.1192
+eval fc ppo reward-1010.71985
+eval dqn reward-1035.2126
+eval drqn reward-1048.0032
+eval reward-869.1544
+eval random reward-2428.235507961342
+eval always migration reward-1510.1804539800312
+eval optimal reward-759.7059186108343
+eval mab-ts reward963.9398541371028
+no_migration_solution-1466.7420671786213
+-------------------------------------------
+| eval always migratio... | -1.5e+03      |
+| eval dqn reward         | -1.03e+03     |
+| eval drqn reward        | -1.04e+03     |
+| eval fc ppo reward      | -1.01e+03     |
+| eval mab-ts reward      | 961           |
+| eval no migration re... | -1.46e+03     |
+| eval optimal reward     | -758          |
+| eval random reward      | -2.43e+03     |
+| eval reward             | -872          |
+| eval sample reward      | -870          |
+-------------------------------------------

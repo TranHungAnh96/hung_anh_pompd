@@ -1,0 +1,325 @@
+Logging to ./log/dqn-rome-with-100-bs-64-new
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -2792.9639     |
+| q_value_loss            | 55.90766       |
+| random reward           | 2.26e+03       |
+| training average rew... | -3078.6194     |
+--------------------------------------------
+save model weights ... 
+--------------------------------------------
+| always migrate reward   | 1.28e+03       |
+| eval reward             | -1229.3828     |
+| q_value_loss            | 56.077312      |
+| random reward           | 2.25e+03       |
+| training average rew... | -3042.249      |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1205.7067     |
+| q_value_loss            | 55.91577       |
+| random reward           | 2.22e+03       |
+| training average rew... | -3080.736      |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1216.055      |
+| q_value_loss            | 106.51649      |
+| random reward           | 2.19e+03       |
+| training average rew... | -3077.6833     |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.25e+03       |
+| eval reward             | -1211.9314     |
+| q_value_loss            | 100.99814      |
+| random reward           | 2.23e+03       |
+| training average rew... | -3044.1401     |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.26e+03       |
+| eval reward             | -1204.1234     |
+| q_value_loss            | 146.85492      |
+| random reward           | 2.25e+03       |
+| training average rew... | -3102.9854     |
+--------------------------------------------
+save model weights ... 
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1214.2095     |
+| q_value_loss            | 146.95285      |
+| random reward           | 2.22e+03       |
+| training average rew... | -3062.2197     |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1212.9392     |
+| q_value_loss            | 147.33131      |
+| random reward           | 2.24e+03       |
+| training average rew... | -3105.6255     |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1227.1823     |
+| q_value_loss            | 207.5092       |
+| random reward           | 2.26e+03       |
+| training average rew... | -3120.8406     |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.29e+03       |
+| eval reward             | -1212.8462     |
+| q_value_loss            | 210.38884      |
+| random reward           | 2.23e+03       |
+| training average rew... | -3122.4265     |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.29e+03       |
+| eval reward             | -1219.979      |
+| q_value_loss            | 343.34818      |
+| random reward           | 2.23e+03       |
+| training average rew... | -3146.8933     |
+--------------------------------------------
+save model weights ... 
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1226.9183     |
+| q_value_loss            | 340.98007      |
+| random reward           | 2.24e+03       |
+| training average rew... | -3148.6807     |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.26e+03       |
+| eval reward             | -1195.7567     |
+| q_value_loss            | 336.6932       |
+| random reward           | 2.23e+03       |
+| training average rew... | -3133.3347     |
+--------------------------------------------
+-------------------------------------------
+| always migrate reward   | 1.27e+03      |
+| eval reward             | -1218.057     |
+| q_value_loss            | 519.2222      |
+| random reward           | 2.24e+03      |
+| training average rew... | -3172.01      |
+-------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1217.274      |
+| q_value_loss            | 514.41156      |
+| random reward           | 2.24e+03       |
+| training average rew... | -3163.3328     |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1215.8052     |
+| q_value_loss            | 671.3026       |
+| random reward           | 2.26e+03       |
+| training average rew... | -3187.826      |
+--------------------------------------------
+save model weights ... 
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1231.7206     |
+| q_value_loss            | 669.41473      |
+| random reward           | 2.23e+03       |
+| training average rew... | -3206.249      |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1209.1154     |
+| q_value_loss            | 671.94366      |
+| random reward           | 2.27e+03       |
+| training average rew... | -3205.5146     |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1217.6547     |
+| q_value_loss            | 767.44214      |
+| random reward           | 2.23e+03       |
+| training average rew... | -3243.1938     |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1210.0118     |
+| q_value_loss            | 767.7765       |
+| random reward           | 2.26e+03       |
+| training average rew... | -3205.601      |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.28e+03       |
+| eval reward             | -1225.029      |
+| q_value_loss            | 855.78015      |
+| random reward           | 2.27e+03       |
+| training average rew... | -3279.3843     |
+--------------------------------------------
+save model weights ... 
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1203.4318     |
+| q_value_loss            | 857.9918       |
+| random reward           | 2.25e+03       |
+| training average rew... | -3298.156      |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1215.5271     |
+| q_value_loss            | 857.49274      |
+| random reward           | 2.25e+03       |
+| training average rew... | -3284.379      |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1210.2051     |
+| q_value_loss            | 824.0317       |
+| random reward           | 2.26e+03       |
+| training average rew... | -3266.462      |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1213.288      |
+| q_value_loss            | 831.0379       |
+| random reward           | 2.24e+03       |
+| training average rew... | -3286.6057     |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1218.3452     |
+| q_value_loss            | 805.38416      |
+| random reward           | 2.24e+03       |
+| training average rew... | -3300.3447     |
+--------------------------------------------
+save model weights ... 
+--------------------------------------------
+| always migrate reward   | 1.28e+03       |
+| eval reward             | -1207.9868     |
+| q_value_loss            | 804.1214       |
+| random reward           | 2.23e+03       |
+| training average rew... | -3385.5955     |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.26e+03       |
+| eval reward             | -1201.0815     |
+| q_value_loss            | 801.21234      |
+| random reward           | 2.2e+03        |
+| training average rew... | -3291.1985     |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1222.2833     |
+| q_value_loss            | 879.4759       |
+| random reward           | 2.27e+03       |
+| training average rew... | -3377.7417     |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1213.9037     |
+| q_value_loss            | 878.10364      |
+| random reward           | 2.22e+03       |
+| training average rew... | -3344.176      |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1209.755      |
+| q_value_loss            | 1071.0353      |
+| random reward           | 2.24e+03       |
+| training average rew... | -3301.0671     |
+--------------------------------------------
+save model weights ... 
+--------------------------------------------
+| always migrate reward   | 1.28e+03       |
+| eval reward             | -1213.9191     |
+| q_value_loss            | 1079.4565      |
+| random reward           | 2.25e+03       |
+| training average rew... | -3298.8298     |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.26e+03       |
+| eval reward             | -1212.8156     |
+| q_value_loss            | 1077.9839      |
+| random reward           | 2.26e+03       |
+| training average rew... | -3305.499      |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1211.3629     |
+| q_value_loss            | 1254.5514      |
+| random reward           | 2.25e+03       |
+| training average rew... | -3422.7646     |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1220.6744     |
+| q_value_loss            | 1259.0162      |
+| random reward           | 2.23e+03       |
+| training average rew... | -3463.9812     |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1214.6854     |
+| q_value_loss            | 1331.8417      |
+| random reward           | 2.25e+03       |
+| training average rew... | -3442.3972     |
+--------------------------------------------
+save model weights ... 
+-------------------------------------------
+| always migrate reward   | 1.27e+03      |
+| eval reward             | -1212.638     |
+| q_value_loss            | 1337.2532     |
+| random reward           | 2.25e+03      |
+| training average rew... | -3513.262     |
+-------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1215.1144     |
+| q_value_loss            | 1325.6361      |
+| random reward           | 2.24e+03       |
+| training average rew... | -3298.4844     |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1228.0339     |
+| q_value_loss            | 1441.8654      |
+| random reward           | 2.25e+03       |
+| training average rew... | -3467.2532     |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1209.9979     |
+| q_value_loss            | 1445.1195      |
+| random reward           | 2.23e+03       |
+| training average rew... | -3492.2498     |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1217.8582     |
+| q_value_loss            | 1569.2787      |
+| random reward           | 2.23e+03       |
+| training average rew... | -3536.8025     |
+--------------------------------------------
+save model weights ... 
+--------------------------------------------
+| always migrate reward   | 1.28e+03       |
+| eval reward             | -1227.0287     |
+| q_value_loss            | 1575.3843      |
+| random reward           | 2.26e+03       |
+| training average rew... | -3539.9993     |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1219.3171     |
+| q_value_loss            | 1569.8207      |
+| random reward           | 2.24e+03       |
+| training average rew... | -3477.3564     |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1223.6979     |
+| q_value_loss            | 1796.9458      |
+| random reward           | 2.25e+03       |
+| training average rew... | -3621.766      |
+--------------------------------------------
+--------------------------------------------
+| always migrate reward   | 1.27e+03       |
+| eval reward             | -1212.0956     |
+| q_value_loss            | 1808.2328      |
+| random reward           | 2.23e+03       |
+| training average rew... | -3564.9739     |
+--------------------------------------------
