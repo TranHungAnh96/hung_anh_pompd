@@ -18,17 +18,17 @@ from numba import jit
 #     ones_indices = np.random.choice(15, 5, replace=False)
 #     matrix[i, ones_indices] = 1
 
-num_rows = 64
-num_cols = 15
+# num_rows = 64
+# num_cols = 15
 
-# Initialize an empty matrix
-matrix = [[0] * num_cols for _ in range(num_rows)]
+# # Initialize an empty matrix
+# matrix = [[0] * num_cols for _ in range(num_rows)]
 
-# Fill each row with 5 ones in random positions
-for row in matrix:
-    ones_indices = random.sample(range(num_cols), random.randint(10,15))
-    for index in ones_indices:
-        row[index] = 1
+# # Fill each row with 5 ones in random positions
+# for row in matrix:
+#     ones_indices = random.sample(range(num_cols), random.randint(10,15))
+#     for index in ones_indices:
+#         row[index] = 1
     
 ###############################################################################################
 
@@ -256,8 +256,11 @@ class BatchMigrationEnv(gym.Env):
         return self._observation_spec
 
     def get_migration_cost(self):
-        image_size = np.random.uniform(self.migration_size_low,
-                                 self.migration_size_high)
+        # image_size = np.random.uniform(self.migration_size_low,
+        #                          self.migration_size_high)
+        
+        image_size = 0
+        
         migration_cost = image_size * 8.0 / self._optical_fiber_trans_rate
 
         return migration_cost
@@ -358,66 +361,64 @@ class BatchMigrationEnv(gym.Env):
                     # zero_index = np.random.randint(15)
                     # service_deploy[zero_index] = 1
                     
-                    service_deploy = [0] * 15
-                    service_deploy[random.randint(0,14)] = 1  
-                    service_deploy = [service_deploy[i:i+1] for i in range(0, len(service_deploy))]      
+                    # service_deploy = [0] * 15
+                    # service_deploy[random.randint(0,14)] = 1  
+                    # service_deploy = [service_deploy[i:i+1] for i in range(0, len(service_deploy))]     
+                     
                     # print(service_deploy)
                                  
-                    temp = np.dot(matrix[idx],service_deploy)
-                    temp1 = np.dot(matrix, service_deploy)
-                    
-                    if temp == 1:                        
-                        result_cost = float(self._state[trace_id][132]*0.2) / 300 +\
-                        (self._state[trace_id][132]*0.2 / self._optical_fiber_trans_rate)*num_of_hops ##added
+                    # temp = np.dot(matrix[idx],service_deploy)
+                    # temp1 = np.dot(matrix, service_deploy)
+                                      
+                    result_cost = float(self._state[trace_id][132]*0.2) / 300 +\
+                    (self._state[trace_id][132]*0.2 / self._optical_fiber_trans_rate)*num_of_hops ##added
                         
-                        precopy_delay = self._state[trace_id][197]*num_of_hops  ##added
+                    # precopy_delay = self._state[trace_id][197]*num_of_hops  ##added
                         
-                        # migrate_service_delay = 0
-                        
-                        # migrateservice_from_centralserver_delay = 0
                     ## add 
                     # print(f"result_cost: {result_cost}")
                     # print(f"precopy_delay: {precopy_delay}")
-                        self.reward = self.reward - precopy_delay - result_cost ##added
                     
-                    else:
-                        indices = np.where(temp1 == 1)
-                        server_host_app = []
-                        no_of_hops_from_action_to_server_host_app = []
+                    self.reward = self.reward - result_cost ##added
+                    
+                    # else:
+                    #     indices = np.where(temp1 == 1)
+                    #     server_host_app = []
+                    #     no_of_hops_from_action_to_server_host_app = []
                         
-                        if indices[0].size > 0:                    
-                            for i in range(len(indices[0])):
-                                server_host_app.append(indices[0][i])
+                    #     if indices[0].size > 0:                    
+                    #         for i in range(len(indices[0])):
+                    #             server_host_app.append(indices[0][i])
                             
-                            for i in range(len(server_host_app)):
-                                no_of_hops_from_action_to_server_host_app.append(self._get_number_of_hops(action, server_host_app[i]))
-                                min_value = min(no_of_hops_from_action_to_server_host_app)
-                                min_index = no_of_hops_from_action_to_server_host_app.index(min_value)
-                                result = server_host_app[min_index]
+                    #         for i in range(len(server_host_app)):
+                    #             no_of_hops_from_action_to_server_host_app.append(self._get_number_of_hops(action, server_host_app[i]))
+                    #             min_value = min(no_of_hops_from_action_to_server_host_app)
+                    #             min_index = no_of_hops_from_action_to_server_host_app.index(min_value)
+                    #             result = server_host_app[min_index]
                                 
-                                no_of_hop_act_to_sv_host_app = self._get_number_of_hops(action, result)
+                    #             no_of_hop_act_to_sv_host_app = self._get_number_of_hops(action, result)
                                 
-                                migrate_service_delay = self._state[trace_id][197]*no_of_hop_act_to_sv_host_app
+                    #             migrate_service_delay = self._state[trace_id][197]*no_of_hop_act_to_sv_host_app
                                 
-                                result_cost = float(self._state[trace_id][132]*0.2) / 300 + \
-                                    (self._state[trace_id][132]*0.2 / self._optical_fiber_trans_rate)*num_of_hops
+                    #             result_cost = float(self._state[trace_id][132]*0.2) / 300 + \
+                    #                 (self._state[trace_id][132]*0.2 / self._optical_fiber_trans_rate)*num_of_hops
                                     
-                                precopy_delay = self._state[trace_id][197]*num_of_hops
+                    #             precopy_delay = self._state[trace_id][197]*num_of_hops
                                 
                                 # migrateservice_from_centralserver_delay = 0
                                 
-                                self.reward = self.reward - precopy_delay - result_cost - migrate_service_delay
-                        else:
-                            migrateservice_from_centralserver_delay = self._state[trace_id][197]*50
+                        #         self.reward = self.reward - precopy_delay - result_cost - migrate_service_delay
+                        # else:
+                        #     migrateservice_from_centralserver_delay = self._state[trace_id][197]*50
                             
-                            result_cost = float(self._state[trace_id][132]*0.2) / 300 +\
-                                    (self._state[trace_id][132]*0.2 / self._optical_fiber_trans_rate)*num_of_hops
+                        #     result_cost = float(self._state[trace_id][132]*0.2) / 300 +\
+                        #             (self._state[trace_id][132]*0.2 / self._optical_fiber_trans_rate)*num_of_hops
                                     
-                            precopy_delay = self._state[trace_id][197]*num_of_hops
+                        #     precopy_delay = self._state[trace_id][197]*num_of_hops
                             
                             # migrate_service_delay = 0
                             
-                            self.reward = self.reward - precopy_delay - result_cost  - migrateservice_from_centralserver_delay  #- migrate_service_delay      
+                    # self.reward = self.reward - precopy_delay - result_cost  - migrateservice_from_centralserver_delay  #- migrate_service_delay      
                             # for idx1, server in enumerate(self.server_list):
                             #     num_of_hops_action = self._get_number_of_hops(action, server.index) ##added the num of hops fr MEC_action to the others
                             
