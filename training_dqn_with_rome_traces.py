@@ -43,7 +43,7 @@ if __name__ == "__main__":
                                                 backhaul_coefficient=0.02,
                                                 migration_coefficient_low=1.0,
                                                 migration_coefficient_high =3.0,
-                                                server_poisson_rate=possion_rate_vector, client_poisson_rate=2,
+                                                server_poisson_rate=possion_rate_vector, client_poisson_rate=6,
                                                 server_task_data_lower_bound=(0.05 * 1000.0 * 1000.0 * 8),
                                                 server_task_data_higher_bound=(5 * 1000.0 * 1000.0 * 8),
                                                 client_task_data_lower_bound=(0.05 * 1000.0 * 1000.0 * 8),
@@ -57,8 +57,8 @@ if __name__ == "__main__":
                                                 traces_file_path='./environment/rome_traces_coordinate.txt',
                                                 transmission_rates=[54.0, 54.0, 54.0, 54.0, 54.0],  # Mbps
                                                 trace_length=100,
-                                                trace_interval=3, #12
-                                                is_full_observation=False,
+                                                trace_interval=12, #12
+                                                is_full_observation=True,
                                                 is_full_action=True)
 
     env_eval_parameters = EnvironmentParameters(trace_start_index=120,
@@ -70,7 +70,7 @@ if __name__ == "__main__":
                                                 migration_coefficient_low=1.0,
                                                 migration_coefficient_high=3.0,
                                                 server_poisson_rate=possion_rate_vector,
-                                                client_poisson_rate=2,
+                                                client_poisson_rate=6,
                                                 server_task_data_lower_bound=(0.05 * 1000.0 * 1000.0 * 8),
                                                 server_task_data_higher_bound=(5 * 1000.0 * 1000.0 * 8),
                                                 client_task_data_lower_bound=(0.05 * 1000.0 * 1000.0 * 8),
@@ -84,8 +84,8 @@ if __name__ == "__main__":
                                                 traces_file_path='./environment/rome_traces_coordinate.txt',
                                                 transmission_rates=[54.0, 54.0, 54.0, 54.0, 54.0],  # Mbps
                                                 trace_length=100,
-                                                trace_interval=3, #12
-                                                is_full_observation=False,
+                                                trace_interval=12, #12
+                                                is_full_observation=True,
                                                 is_full_action=True)
 
     env = BatchMigrationEnv(env_default_parameters)

@@ -1,5 +1,5 @@
-from environment.batch_migration_env_11 import EnvironmentParameters
-from environment.batch_migration_env_11 import BatchMigrationEnv
+from environment.batch_migration_env_changing_add_service import EnvironmentParameters
+from environment.batch_migration_env_changing_add_service import BatchMigrationEnv
 from baselines.linear_baseline import LinearTimeBaseline
 from baselines.rnn_critic_network_baseline import RNNCriticNetworkBaseline
 from baselines.critic_network_baseline import CriticNetworkBaseline

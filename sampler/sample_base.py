@@ -47,7 +47,7 @@ class SampleProcessor(object):
 
     def __init__(self,
                 baseline,
-                discount=0.99,
+                discount=0.5,
                 gae_lambda=1,
                 normalize_adv=False,
                 positive_adv=False,

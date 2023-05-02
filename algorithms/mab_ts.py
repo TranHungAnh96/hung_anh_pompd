@@ -15,7 +15,7 @@ class MABTSServiceMigration(object):
         self.visit_time = np.zeros(env._num_base_station)
 
     def one_hot(self, position):
-        ret = np.zeros(env._num_base_station)
+        ret = np.zeros(self.env._num_base_station)
         ret[position] = 1.0
 
         return ret
@@ -78,7 +78,7 @@ class MABTSServiceMigration(object):
 
         action = np.argmin(q_values)
 
-        ob, rewards, false, done = env.step(action)
+        ob, rewards, false, done = self.env.step(action)
 
         rewards = - rewards
 
@@ -100,7 +100,7 @@ class MABTSServiceMigration(object):
             action = np.argmin(q_values)
             actions.append(action)
 
-        ob, rewards, false, done = env.step(actions)
+        ob, rewards, false, done = self.env.step(actions)
 
 
 

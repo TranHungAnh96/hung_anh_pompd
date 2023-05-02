@@ -600,7 +600,7 @@ if __name__ == "__main__":
 
     linear_feature_baseline = LinearFeatureBaseline()
     sampler_process = MigrationSamplerProcess(baseline=linear_feature_baseline,
-                discount=0.99,
+                discount=0.5,
                 gae_lambda=1,
                 normalize_adv=False,
                 positive_adv=False,)

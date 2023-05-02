@@ -59,7 +59,7 @@ if __name__ == "__main__":
                                                    transmission_rates=[54.0, 54.0, 54.0, 54.0, 54.0],  # Mbps
                                                    trace_length=100,
                                                    trace_interval=3,
-                                                   is_full_observation=False,
+                                                   is_full_observation=True,
                                                    is_full_action=True)
 
     env_eval_parameters = EnvironmentParameters(trace_start_index=120,
@@ -86,7 +86,7 @@ if __name__ == "__main__":
                                                 transmission_rates=[54.0, 54.0, 54.0, 54.0, 54.0],  # Mbps
                                                 trace_length=100,
                                                 trace_interval=3,
-                                                is_full_observation=False,
+                                                is_full_observation=True,
                                                 is_full_action=True)
 
     env = BatchMigrationEnv(env_default_parameters)

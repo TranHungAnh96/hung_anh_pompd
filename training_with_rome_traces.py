@@ -29,7 +29,7 @@ import sys
 
 
 import os
-os.environ["CUDA_VISIBLE_DEVICES"]="1"
+os.environ["CUDA_VISIBLE_DEVICES"]="0"
 
 from utils import logger
 
@@ -150,7 +150,7 @@ if __name__ == "__main__":
                       algo=algo,
                       sampler=sampler,
                       sample_processor=sampler_process,
-                      update_batch_size=480,
+                      update_batch_size=160,
                       policy=rnn_policy,
                       n_itr=120,
                       save_interval=5,

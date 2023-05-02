@@ -1,4 +1,3 @@
-import sys
 from environment.batch_migration_env_changing_add_service import EnvironmentParameters
 from environment.migration_env import MigrationEnv
 from environment.batch_migration_env_changing_add_service import BatchMigrationEnv
@@ -15,10 +14,11 @@ from dracm_trainer import Trainer
 
 import tensorflow as tf
 import numpy as np
+import sys
 
 import os
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 from utils import logger
 
@@ -63,7 +63,7 @@ if __name__ == "__main__":
                                                 traces_file_path='./environment/san_traces_coordinate.txt',
                                                 transmission_rates=[54.0, 54.0, 54.0, 54.0, 54.0],  # Mbps
                                                 trace_length=100,
-                                                trace_interval=12,
+                                                trace_interval=3,
                                                 is_full_observation=True,
                                                 is_full_action=True)
 
@@ -90,7 +90,7 @@ if __name__ == "__main__":
                                                 traces_file_path='./environment/san_traces_coordinate.txt',
                                                 transmission_rates=[54.0, 54.0, 54.0, 54.0, 54.0],  # Mbps
                                                 trace_length=100,
-                                                trace_interval=12,
+                                                trace_interval=3,
                                                 is_full_observation=True,
                                                 is_full_action=True)
 
